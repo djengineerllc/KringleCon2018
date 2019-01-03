@@ -1,0 +1,164 @@
+﻿<UserControl x:Class="KringleCon2018.KringleConObjectivesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:classes="clr-namespace:KringleCon2018.Classes"
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:views="clr-namespace:KringleCon2018.Objectives"
+             Background="Black"
+             mc:Ignorable="d" d:DesignHeight="650" d:DesignWidth="800">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <classes:NullVisibilityConverter x:Key="NullToVisibilityConverter"/>
+        <classes:SelectedItemToContentConverter x:Key="SelectedItemToContentConverter" />
+        <DataTemplate x:Key="MenuItemTemplate" DataType="{x:Type controls:HamburgerMenuGlyphItem}">
+            <Grid Height="48">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                    FontSize="14"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Foreground="White">
+                    <Glyphs 
+                        FontRenderingEmSize="14"
+                        FontUri="/Resources/KerstKaarten.ttf" 
+                        UnicodeString="{Binding Glyph}" Indices=""
+                        Fill="White" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                    />
+                </TextBlock>
+                <TextBlock Grid.Column="1"
+                    VerticalAlignment="Center"
+                    FontSize="14"
+                    Foreground="White"
+                    Text="{Binding Label}" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <controls:HamburgerMenu x:Name="HamburgerMenuControl"
+                        Foreground="White"
+                        IsPaneOpen="False"
+                            Opacity="0.7"
+                            Background="Black"
+                        ItemTemplate="{StaticResource MenuItemTemplate}"
+                        OptionsItemTemplate="{StaticResource MenuItemTemplate}"
+                        DisplayMode="CompactInline">
+        <controls:HamburgerMenu.PaneBackground>
+            <LinearGradientBrush EndPoint="0,0" StartPoint="0,3.1"
+                     MappingMode="Absolute" SpreadMethod="Repeat">
+                <GradientStop Color="Black" Offset="0" />
+                <GradientStop Color="Black" Offset="0.2" />
+                <GradientStop Color="White" Offset="0" />
+                <GradientStop Color="Black" Offset="0.2" />
+            </LinearGradientBrush>
+        </controls:HamburgerMenu.PaneBackground>
+        <controls:HamburgerMenu.ContentTemplate>
+            <DataTemplate DataType="{x:Type controls:HamburgerMenuItem}">
+                <Grid x:Name="TheContentGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="48" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0"
+                    Background="#FF444444">
+                        <TextBlock x:Name="Header"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="22"
+                            Foreground="White"
+                                   Text="{Binding Label}"
+                                   >
+                            <TextBlock.Effect>
+                                <DropShadowEffect
+                            ShadowDepth="4"
+                            Direction="0"
+                            Color="Black"
+                            Opacity="0.45"
+                            BlurRadius="5"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Border>
+                    <ContentControl x:Name="TheContent"
+                            Grid.Row="1"
+                            Focusable="False"
+                            Foreground="{DynamicResource BlackBrush}"
+                            Content="{Binding Tag}" />
+                </Grid>
+            </DataTemplate>
+        </controls:HamburgerMenu.ContentTemplate>
+        <controls:HamburgerMenu.Content>
+            <MultiBinding Converter="{StaticResource SelectedItemToContentConverter}">
+                <Binding RelativeSource="{RelativeSource Self}"
+                             Mode="OneWay"
+                             Path="SelectedItem" />
+                <Binding RelativeSource="{RelativeSource Self}"
+                             Mode="OneWay"
+                             Path="SelectedOptionsItem" />
+            </MultiBinding>
+        </controls:HamburgerMenu.Content>
+        <controls:HamburgerMenu.ItemsSource>
+            <controls:HamburgerMenuItemCollection>
+                <controls:HamburgerMenuGlyphItem Glyph="1" Label="Orientation Challenge">
+                    <controls:HamburgerMenuGlyphItem.Tag>
+                        <views:Objective1View />
+                    </controls:HamburgerMenuGlyphItem.Tag>
+                </controls:HamburgerMenuGlyphItem>
+                <controls:HamburgerMenuGlyphItem Glyph="2" Label="Directory Browsing">
+                    <controls:HamburgerMenuGlyphItem.Tag>
+                        <views:Objective2View />
+                    </controls:HamburgerMenuGlyphItem.Tag>
+                </controls:HamburgerMenuGlyphItem>
+                <controls:HamburgerMenuGlyphItem Glyph="3" Label="de Bruijn Sequences">
+                    <controls:HamburgerMenuGlyphItem.Tag>
+                        <views:Objective3View />
+                    </controls:HamburgerMenuGlyphItem.Tag>
+                </controls:HamburgerMenuGlyphItem>
+                <controls:HamburgerMenuGlyphItem Glyph="4" Label="Data Repo Analysis">
+                    <controls:HamburgerMenuGlyphItem.Tag>
+                        <views:Objective4View />
+                    </controls:HamburgerMenuGlyphItem.Tag>
+                </controls:HamburgerMenuGlyphItem>
+                <controls:HamburgerMenuGlyphItem Glyph="5" Label="AD Privilege Discovery">
+                    <controls:HamburgerMenuGlyphItem.Tag>
+                        <views:Objective5View />
+                    </controls:HamburgerMenuGlyphItem.Tag>
+                </controls:HamburgerMenuGlyphItem>
+                <controls:HamburgerMenuGlyphItem Glyph="6" Label="Badge Manipulation">
+                    <controls:HamburgerMenuGlyphItem.Tag>
+                        <views:Objective6View />
+                    </controls:HamburgerMenuGlyphItem.Tag>
+                </controls:HamburgerMenuGlyphItem>
+                <controls:HamburgerMenuGlyphItem Glyph="7" Label="HR Incident Response">
+                    <controls:HamburgerMenuGlyphItem.Tag>
+                        <views:Objective7View />
+                    </controls:HamburgerMenuGlyphItem.Tag>
+                </controls:HamburgerMenuGlyphItem>
+                <controls:HamburgerMenuGlyphItem Glyph="8" Label="Network Traffic Forensics">
+                    <controls:HamburgerMenuGlyphItem.Tag>
+                        <views:Objective8View />
+                    </controls:HamburgerMenuGlyphItem.Tag>
+                </controls:HamburgerMenuGlyphItem>
+                <controls:HamburgerMenuGlyphItem Glyph="9" Label="Ransomeware Recovery">
+                    <controls:HamburgerMenuGlyphItem.Tag>
+                        <views:Objective9View />
+                    </controls:HamburgerMenuGlyphItem.Tag>
+                </controls:HamburgerMenuGlyphItem>
+                <controls:HamburgerMenuGlyphItem Glyph="10" Label="Who Is Behind It All?">
+                    <controls:HamburgerMenuGlyphItem.Tag>
+                        <views:Objective10View />
+                    </controls:HamburgerMenuGlyphItem.Tag>
+                </controls:HamburgerMenuGlyphItem>
+            </controls:HamburgerMenuItemCollection>
+        </controls:HamburgerMenu.ItemsSource>
+        <controls:HamburgerMenu.OptionsItemsSource>
+            <controls:HamburgerMenuItemCollection>
+                
+            </controls:HamburgerMenuItemCollection>
+        </controls:HamburgerMenu.OptionsItemsSource>
+    </controls:HamburgerMenu>
+</UserControl>

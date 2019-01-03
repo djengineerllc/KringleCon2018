@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28407.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KringleCon2018", "KringleCon2018\KringleCon2018.csproj", "{50AEC1C4-40A5-4F04-8ED5-92038EFB906A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50AEC1C4-40A5-4F04-8ED5-92038EFB906A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50AEC1C4-40A5-4F04-8ED5-92038EFB906A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50AEC1C4-40A5-4F04-8ED5-92038EFB906A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50AEC1C4-40A5-4F04-8ED5-92038EFB906A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {813E5875-4455-4FE5-B902-D53D126AF609}
+	EndGlobalSection
+EndGlobal

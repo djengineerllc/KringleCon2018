@@ -1,0 +1,604 @@
+﻿<UserControl x:Class="KringleCon2018.Objectives.Objective9View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KringleCon2018.Objectives"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Foreground="White"
+             mc:Ignorable="d" Background="Black"
+             d:DesignHeight="1800" d:DesignWidth="800">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="HeaderBackground" Color="{StaticResource Primary700}"/>
+        <ControlTemplate x:Key="CustomExpanderTemplate" TargetType="Expander">
+            <Border Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" CornerRadius="3" SnapsToDevicePixels="True">
+                <DockPanel>
+                    <ToggleButton Content="{TemplateBinding HeaderedContentControl.Header}" ContentTemplate="{TemplateBinding HeaderedContentControl.HeaderTemplate}" DockPanel.Dock="Top" FontFamily="{TemplateBinding Control.FontFamily}" FontSize="{TemplateBinding Control.FontSize}" FontStretch="{TemplateBinding Control.FontStretch}" FontStyle="{TemplateBinding Control.FontStyle}" FontWeight="{TemplateBinding Control.FontWeight}" Foreground="{TemplateBinding Control.Foreground}" HorizontalContentAlignment="{TemplateBinding Control.HorizontalContentAlignment}" IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Margin="1" MinHeight="0" MinWidth="0" Name="HeaderSite" Padding="{TemplateBinding Control.Padding}" VerticalContentAlignment="{TemplateBinding Control.VerticalContentAlignment}">
+                        <ToggleButton.FocusVisualStyle>
+                            <Style>
+                                <Setter Property="Control.Template">
+                                    <Setter.Value>
+                                        <ControlTemplate>
+                                            <Border>
+                                                <Rectangle Margin="0" SnapsToDevicePixels="True" Stroke="Black" StrokeDashArray="1 2" StrokeThickness="1" />
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ToggleButton.FocusVisualStyle>
+                        <ToggleButton.Style>
+                            <Style TargetType="ToggleButton">
+                                <Setter Property="Control.Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Border Padding="{TemplateBinding Control.Padding}">
+                                                <Grid Background="{StaticResource HeaderBackground}" SnapsToDevicePixels="False">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="19" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Ellipse Height="19" HorizontalAlignment="Center" Name="circle" Stroke="DarkGray" VerticalAlignment="Center" Width="19" />
+                                                    <Path Data="M1,1.5L4.5,5 8,1.5" HorizontalAlignment="Center" Name="arrow" SnapsToDevicePixels="False" Stroke="#FF666666" StrokeThickness="2" VerticalAlignment="Center" />
+                                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Grid.Column="1" HorizontalAlignment="Left" Margin="4,0,0,0" RecognizesAccessKey="True" SnapsToDevicePixels="True" VerticalAlignment="Center" />
+                                                </Grid>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                                                    <Setter Property="Path.Data" TargetName="arrow" Value="M1,4.5L4.5,1 8,4.5" />
+                                                </Trigger>
+                                                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                                    <Setter Property="Shape.Stroke" TargetName="circle" Value="#FF3C7FB1" />
+                                                    <Setter Property="Shape.Stroke" TargetName="arrow" Value="#FF222222" />
+                                                </Trigger>
+                                                <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                                    <Setter Property="Shape.Stroke" TargetName="circle" Value="#FF526C7B" />
+                                                    <Setter Property="Shape.StrokeThickness" TargetName="circle" Value="1.5" />
+                                                    <Setter Property="Shape.Stroke" TargetName="arrow" Value="#FF003366" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ToggleButton.Style>
+                    </ToggleButton>
+                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" DockPanel.Dock="Bottom" Focusable="False" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" Margin="{TemplateBinding Control.Padding}" Name="ExpandSite" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Visibility="Collapsed" />
+                </DockPanel>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Expander.IsExpanded" Value="True">
+                    <Setter Property="UIElement.Visibility" TargetName="ExpandSite" Value="Visible" />
+                </Trigger>
+                <Trigger Property="Expander.ExpandDirection" Value="Right">
+                    <Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Right" />
+                    <Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Left" />
+                    <Setter Property="FrameworkElement.Style" TargetName="HeaderSite">
+                        <Setter.Value>
+                            <Style TargetType="ToggleButton">
+                                <Setter Property="Control.Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Border Padding="{TemplateBinding Control.Padding}">
+                                                <Grid Background="{StaticResource HeaderBackground}" SnapsToDevicePixels="False">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="19" />
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid>
+                                                        <Grid.LayoutTransform>
+                                                            <TransformGroup>
+                                                                <RotateTransform Angle="-90" />
+                                                            </TransformGroup>
+                                                        </Grid.LayoutTransform>
+                                                        <Ellipse Height="19" HorizontalAlignment="Center" Name="circle" Stroke="DarkGray" VerticalAlignment="Center" Width="19" />
+                                                        <Path Data="M1,1.5L4.5,5 8,1.5" HorizontalAlignment="Center" Name="arrow" SnapsToDevicePixels="False" Stroke="#FF666666" StrokeThickness="2" VerticalAlignment="Center" />
+                                                    </Grid>
+                                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Grid.Row="1" HorizontalAlignment="Center" Margin="0,4,0,0" RecognizesAccessKey="True" SnapsToDevicePixels="True" VerticalAlignment="Top" />
+                                                </Grid>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                                                    <Setter Property="Path.Data" TargetName="arrow" Value="M1,4.5L4.5,1 8,4.5" />
+                                                </Trigger>
+                                                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                                    <Setter Property="Shape.Stroke" TargetName="circle" Value="#FF3C7FB1" />
+                                                    <Setter Property="Shape.Stroke" TargetName="arrow" Value="#FF222222" />
+                                                </Trigger>
+                                                <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                                    <Setter Property="Shape.Stroke" TargetName="circle" Value="#FF526C7B" />
+                                                    <Setter Property="Shape.StrokeThickness" TargetName="circle" Value="1.5" />
+                                                    <Setter Property="Shape.Stroke" TargetName="arrow" Value="#FF003366" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="Expander.ExpandDirection" Value="Up">
+                    <Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Top" />
+                    <Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Bottom" />
+                    <Setter Property="FrameworkElement.Style" TargetName="HeaderSite">
+                        <Setter.Value>
+                            <Style TargetType="ToggleButton">
+                                <Setter Property="Control.Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Border Padding="{TemplateBinding Control.Padding}">
+                                                <Grid Background="{StaticResource HeaderBackground}" SnapsToDevicePixels="False">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="19" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid>
+                                                        <Grid.LayoutTransform>
+                                                            <TransformGroup>
+                                                                <RotateTransform Angle="180" />
+                                                            </TransformGroup>
+                                                        </Grid.LayoutTransform>
+                                                        <Ellipse Height="19" HorizontalAlignment="Center" Name="circle" Stroke="DarkGray" VerticalAlignment="Center" Width="19" />
+                                                        <Path Data="M1,1.5L4.5,5 8,1.5" HorizontalAlignment="Center" Name="arrow" SnapsToDevicePixels="False" Stroke="#FF666666" StrokeThickness="2" VerticalAlignment="Center" />
+                                                    </Grid>
+                                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Grid.Column="1" HorizontalAlignment="Left" Margin="4,0,0,0" RecognizesAccessKey="True" SnapsToDevicePixels="True" VerticalAlignment="Center" />
+                                                </Grid>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                                                    <Setter Property="Path.Data" TargetName="arrow" Value="M1,4.5L4.5,1 8,4.5" />
+                                                </Trigger>
+                                                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                                    <Setter Property="Shape.Stroke" TargetName="circle" Value="#FF3C7FB1" />
+                                                    <Setter Property="Shape.Stroke" TargetName="arrow" Value="#FF222222" />
+                                                </Trigger>
+                                                <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                                    <Setter Property="Shape.Stroke" TargetName="circle" Value="#FF526C7B" />
+                                                    <Setter Property="Shape.StrokeThickness" TargetName="circle" Value="1.5" />
+                                                    <Setter Property="Shape.Stroke" TargetName="arrow" Value="#FF003366" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="Expander.ExpandDirection" Value="Left">
+                    <Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Left" />
+                    <Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Right" />
+                    <Setter Property="FrameworkElement.Style" TargetName="HeaderSite">
+                        <Setter.Value>
+                            <Style TargetType="ToggleButton">
+                                <Setter Property="Control.Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Border Padding="{TemplateBinding Control.Padding}">
+                                                <Grid Background="{StaticResource HeaderBackground}" SnapsToDevicePixels="False">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="19" />
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid>
+                                                        <Grid.LayoutTransform>
+                                                            <TransformGroup>
+                                                                <RotateTransform Angle="90" />
+                                                            </TransformGroup>
+                                                        </Grid.LayoutTransform>
+                                                        <Ellipse Height="19" HorizontalAlignment="Center" Name="circle" Stroke="DarkGray" VerticalAlignment="Center" Width="19" />
+                                                        <Path Data="M1,1.5L4.5,5 8,1.5" HorizontalAlignment="Center" Name="arrow" SnapsToDevicePixels="False" Stroke="#FF666666" StrokeThickness="2" VerticalAlignment="Center" />
+                                                    </Grid>
+                                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Grid.Row="1" HorizontalAlignment="Center" Margin="0,4,0,0" RecognizesAccessKey="True" SnapsToDevicePixels="True" VerticalAlignment="Top" />
+                                                </Grid>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                                                    <Setter Property="Path.Data" TargetName="arrow" Value="M1,4.5L4.5,1 8,4.5" />
+                                                </Trigger>
+                                                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                                    <Setter Property="Shape.Stroke" TargetName="circle" Value="#FF3C7FB1" />
+                                                    <Setter Property="Shape.Stroke" TargetName="arrow" Value="#FF222222" />
+                                                </Trigger>
+                                                <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                                    <Setter Property="Shape.Stroke" TargetName="circle" Value="#FF526C7B" />
+                                                    <Setter Property="Shape.StrokeThickness" TargetName="circle" Value="1.5" />
+                                                    <Setter Property="Shape.Stroke" TargetName="arrow" Value="#FF003366" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="UIElement.IsEnabled" Value="False">
+                    <Setter Property="Control.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <ScrollViewer Name="Scroller" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Stretch" Background="Black">
+        <StackPanel Width="420">
+            <TextBlock Margin="10,10,10,10">
+                <Run FontSize="30" FontWeight="Regular" FontFamily="Sans"  FontStyle="Italic" Text="Difficulty:" />
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+            </TextBlock>
+            <TextBlock FontFamily="Sans"
+                       FontSize="16"
+                       Margin="10,10,10,10"
+                       TextAlignment="Justify"
+                       HorizontalAlignment="Left"
+                       TextWrapping="Wrap" 
+                       Width="400">
+                <Run Text="Alabaster Snowball is in dire need of your help. Santa's file server has been hit with malware. Help Alabaster Snowball deal with the malware on Santa's server by completing several tasks." />
+                <Run FontStyle="Italic" Text="For hints on achieving this objective, please visit Shinny Upatree and help him with the" />
+                <Run FontWeight="Bold" FontStyle="Italic" Text="Sleigh Bell Lottery" />
+                <Run FontStyle="Italic" Text="Cranberry Pi terminal challenge." />
+            </TextBlock>
+            <Border BorderBrush="White" BorderThickness="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" BorderBrush="White" BorderThickness="2">
+                        <TextBlock FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="Elf" />
+                    </Border>
+                    <Border Grid.Row="0" Grid.Column="1" BorderBrush="White" BorderThickness="2">
+                        <TextBlock FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="CranberyPi Game" />
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="0" BorderBrush="White" BorderThickness="2" VerticalAlignment="Center">
+                        <TextBlock FontFamily="Sans" FontSize="16" TextWrapping="Wrap" Text="Shinny Upatree" />
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="1" BorderBrush="White" BorderThickness="2">
+                        <TextBlock VerticalAlignment="Center" FontFamily="Sans" FontSize="16">
+                        <Hyperlink Command="{Binding Path=NavigateCommand}" CommandParameter="https://docker.kringlecon.com/?challenge=unlinked-function">
+                            Sleigh Bell Lottery
+                        </Hyperlink>
+                        </TextBlock>
+                    </Border>
+                </Grid>
+            </Border>
+            <TextBlock/>
+            <Expander HorizontalAlignment="Stretch" Background="Black" BorderBrush="{StaticResource AccentBaseColorBrush}" BorderThickness="2"
+          HorizontalContentAlignment="Stretch" Padding="0" Margin="0" Width="Auto" Template="{StaticResource CustomExpanderTemplate}">
+                <Expander.Header>Catch the Malware</Expander.Header>
+                <StackPanel>
+                    <TextBlock Margin="10,10,10,10">
+                        <Run FontSize="30" FontWeight="Regular" FontFamily="Sans"  FontStyle="Italic" Text="Difficulty:" />
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                    </TextBlock>
+                    <TextBlock Text="Two"/>
+                    <TextBlock Text="Three"/>
+                    <TextBlock Text="One"/>
+                    <TextBlock Text="Two"/>
+                    <TextBlock Text="Three"/>
+                </StackPanel>
+            </Expander>
+            <Expander HorizontalAlignment="Stretch" Background="Black" BorderBrush="{StaticResource AccentBaseColorBrush}" BorderThickness="2"
+          HorizontalContentAlignment="Stretch" Padding="0" Margin="0" Width="Auto" Template="{StaticResource CustomExpanderTemplate}">
+                <Expander.Header>Identify the Domain</Expander.Header>
+                <StackPanel>
+                    <TextBlock Margin="10,10,10,10">
+                        <Run FontSize="30" FontWeight="Regular" FontFamily="Sans"  FontStyle="Italic" Text="Difficulty:" />
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                    </TextBlock>
+                    <TextBlock Text="Two"/>
+                    <TextBlock Text="Three"/>
+                    <TextBlock Text="One"/>
+                    <TextBlock Text="Two"/>
+                    <TextBlock Text="Three"/>
+                </StackPanel>
+            </Expander>
+            <Expander HorizontalAlignment="Stretch" Background="Black" BorderBrush="{StaticResource AccentBaseColorBrush}" BorderThickness="2"
+          HorizontalContentAlignment="Stretch" Padding="0" Margin="0" Width="Auto" Template="{StaticResource CustomExpanderTemplate}">
+                <Expander.Header>Stop the Malware</Expander.Header>
+                <StackPanel>
+                    <TextBlock Margin="10,10,10,10">
+                        <Run FontSize="30" FontWeight="Regular" FontFamily="Sans"  FontStyle="Italic" Text="Difficulty:" />
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                    </TextBlock>
+                    <TextBlock Text="Two"/>
+                    <TextBlock Text="Three"/>
+                    <TextBlock Text="One"/>
+                    <TextBlock Text="Two"/>
+                    <TextBlock Text="Three"/>
+                </StackPanel>
+            </Expander>
+            <Expander HorizontalAlignment="Stretch" Background="Black" BorderBrush="{StaticResource AccentBaseColorBrush}" BorderThickness="2"
+          HorizontalContentAlignment="Stretch" Padding="0" Margin="0" Width="Auto" Template="{StaticResource CustomExpanderTemplate}">
+                <Expander.Header>Recover Alabaster's Password</Expander.Header>
+                <StackPanel>
+                    <TextBlock Margin="10,10,10,10">
+                        <Run FontSize="30" FontWeight="Regular" FontFamily="Sans"  FontStyle="Italic" Text="Difficulty:" />
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                        <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                        <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                            <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                        </Path>
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                                    <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                    </TextBlock>
+                    <TextBlock Text="Two"/>
+                    <TextBlock Text="Three"/>
+                    <TextBlock Text="One"/>
+                    <TextBlock Text="Two"/>
+                    <TextBlock Text="Three"/>
+                </StackPanel>
+            </Expander>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

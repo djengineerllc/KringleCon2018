@@ -1,0 +1,499 @@
+<html>
+    <head>
+    <title>Packalyzer</title>
+    <link rel="stylesheet" href="https://packalyzer.kringlecastle.com:80/pub/css/materialize.css">
+    <link rel="stylesheet" href="https://packalyzer.kringlecastle.com:80/pub/css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <style>
+        /* label focus color */
+        .input-field.cg input + label {
+            color: white !important;
+        }
+        /* label underline focus color */
+        .row .input-field.cg input {
+            border-bottom: 1px solid white !important;
+            box-shadow: 0 1px 0 0 white !important
+        }
+        /* label focus color */
+        .input-field.cg input:focus + label {
+            color: #404040   !important;
+        }
+        /* label underline focus color */
+        .row .input-field.cg input:focus {
+            border-bottom: 1px solid #404040    !important;
+            box-shadow: 0 1px 0 0 #404040   !important
+        }
+        .material-icons.prefix.cg.active {
+            color: #404040;
+        }
+        .bargraph_texts {
+            text-align: center; 
+            color: white; 
+            margin: 0;
+        }
+        .bargraph_container {
+            display: none;
+            overflow: hidden;
+        }
+        .grow { transition: all .2s ease-in-out; }
+        .grow:hover { transform: scale(1.5); }
+        #modal1 {
+            background-color: white;
+        }
+        input, select, textarea{
+            color: white;
+        }
+    </style>
+    <body>
+        <nav class="blue-grey">
+            <div class="nav-wrapperred" style="" id="nav_bar">
+                <img class="" height="55px" style="margin-top: 5px; margin-left: 5px;" width="auto" src="https://packalyzer.kringlecastle.com:80/pub/img/logo.png"/>
+                <ul id="nav-mobile" class="right">
+                    <li onclick="make_active('files'); change_panel('files_panel');return false;" class="active" id="files"><a href="#">Analyze</a></li>
+                    <li onclick="open_modal('account')" class="" id=""><a href="#">Account</a></li>
+                    <li onclick="open_modal('captures')" class="" id=""><a href="#">Captures</a></li>
+                    <li class=""><a href="#" onclick="document.cookie='PASESSION=null; expires=Thu, 01 Jan 1970 00:00:01 GMT;';window.location.href = '/'">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row main_panels" id="files_panel" style="width: 90%; min-width: 1120px">
+            <!-- Upload Form Panel-->
+            <div class="input-field col s12" style="height: 2%"></div>
+            <div class="col s12 z-depth-2 home_overlay">
+                <div class="input-field col s3 tooltipped"  data-position="top" data-delay="500" data-tooltip="Analyzes UDP or TCP only" >
+                    <span class="btn btn-success fileinput-button"  style="width: 100%;" id="upload_traffic_button">
+                        <i class="material-icons prefix file_upload_click" style="color: white;">cloud_upload</i>
+                        <span style="margin-left: 50px;" class="file_upload_click">Analyze PCAP</span>
+                        <input id="fileupload" type="file" name="pcap" style="opacity: 0; width: 100%; height: 100%;" id="file_upload" >
+                    </span>
+                </div>
+                <div class="input-field col s3 tooltipped"  data-position="top" data-delay="500" data-tooltip="Sniffing for admins only" id="sniff_traffic_tooltip">
+                    <button id="sniff_traffic" class="btn waves-effect waves-light disabled" style="width: 100%;" type="submit" name="action">Sniff Traffic
+                        <i class="material-icons left">sync</i>
+                    </button>
+                </div>
+                <div class="input-field col s6">
+                    <div id="progress" class="progress" style="height: 20px; margin-bottom: -10px; max-height: 100%;">
+                        <div id="progress-level" class="progress-bar progress-bar-success"></div>
+                    </div>
+                </div>
+                <div class="input-field col s12"></div>
+            </div>
+            <div class="input-field col s12 bargraph_container"></div>
+            <!-- Bar Graphs and Pie Charts -->
+            <div class="col s3 z-depth-2 home_overlay bargraph_container">
+                <div class="input-field col s12">
+                    <h5 class="bargraph_texts">Protocols</h5>
+                    <div id="piechart_top_protocols" class="piechart"></div>
+                </div>
+                <div class="input-field col s12"></div>
+            </div>
+            <div class="col s4 z-depth-2 home_overlay bargraph_container">
+                <div class="input-field col s12">
+                    <h5 class="bargraph_texts">Top Ports</h5>
+                    <div id="piechart_dst_port" class="piechart"></div>
+                </div>
+                <div class="input-field col s12"></div>
+            </div>
+            <div class="col s5 z-depth-2 home_overlay bargraph_container">
+                <div class="input-field col s12">
+                    <h5 class="bargraph_texts">Top Talkers</h5>
+                    <div id="piechart_top_talkers" class="piechart"></div>
+                </div>
+                <div class="input-field col s12"></div>
+            </div>
+            <div class="input-field col s12"></div>
+            <!-- Packets Panel -->
+            <div class="col s12 z-depth-2 home_overlay" id="packets_listing" style="max-height: 700px; overflow: hidden; overflow-y: scroll;">
+                <div class="input-field col s12"></div>
+                <table class="highlight striped bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date & Time</th>
+                            <th>Frame Len</th>
+                            <th>Protocol</th>
+                            <th>Src IP</th>
+                            <th>Src Port</th>
+                            <th>Dst IP</th>
+                            <th>Dst Port</th>
+                            <th>Stream #</th>
+                            <th>Info</th>
+                        </tr>
+                    </thead>
+            
+                    <tbody  id="packets_tables_body">
+
+                    </tbody>
+                </table>
+                <div class="input-field col s12"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12"></div>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <div class="input-field col s12"  id="modal_content">
+
+                </div>
+                <div class="center-align"  id="">
+                    <button class="modal-action modal-close waves-effect waves-green btn-flat center-align" >Close</button>
+                </div>
+            </div>
+            <div class="input-field col s12"></div>
+        </div>
+
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://packalyzer.kringlecastle.com:80/pub/js/jquery.ui.widget.js"></script>
+    <script src="https://packalyzer.kringlecastle.com:80/pub/js/jquery.iframe-transport.js"></script>
+    <script src="https://packalyzer.kringlecastle.com:80/pub/js/jquery.fileupload.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://packalyzer.kringlecastle.com:80/pub/js/custom.js"></script>
+    <script src="https://packalyzer.kringlecastle.com:80/pub/js/xss.js"></script>
+    <script src="https://packalyzer.kringlecastle.com:80/pub/js/loader.js"></script>
+    <script>
+        function open_modal(type) {
+            if (type === 'account') {
+                let html = `<h5 class="center-align">Account</h5>
+                            <ul class="collection">
+                            <li class="collection-item avatar">
+                                <i class="material-icons circle blue">account_circle</i>
+                                <strong><span class="title">Account Name</span></strong>
+                                <p id="account_name"></p>
+                                </li>
+                            <li class="collection-item avatar">
+                                <i class="material-icons circle">email</i>
+                                <strong><span class="title">Email</span></strong>
+                                <p id="account_email"></p>
+                                </li>
+                            <li class="collection-item avatar">
+                                <i class="material-icons circle green">supervisor_account</i>
+                                <strong><span class="title">Is Admin?</span></strong>
+                                <p id="account_isadmin"></p>
+                                </li>
+                            <li class="collection-item avatar">
+                                <i class="material-icons circle red">assignment_ind</i>
+                                <strong><span class="title">User ID</span></strong>
+                                <p id="account_id"></p>
+                                </li>
+                            </ul>`
+                $('#modal_content').html(html);
+                $('#account_name').html(filterXSS(user_info.username));
+                $('#account_email').html(filterXSS(user_info.email));
+                $('#account_isadmin').html(filterXSS(String(Boolean(user_info.is_admin))));
+                $('#account_id').html(filterXSS(user_info._id));
+            } else if (type === 'captures') {
+                $.post( "/api/list",{}).done(function( result ) {
+                    if (result.request) {
+                        let html = `<div class="input-field col s12"><h5 class="center-align">Saved Pcaps</h5></div><div class="input-field col s12"></div><table class="highlight striped bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Download</th>
+                                            <th>Reanalyze</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody  id="packets_modal_body">
+                                    </tbody>
+                                </table><div class="input-field col s12"></div>`
+                        $('#modal_content').html(html);
+                        html = '';
+                        for (var i=0; i < result.data.length; i++) {
+                            html += "<tr><td>"+filterXSS(result.data[i].split(',')[0])+"</td><td><a href='/uploads/"+result.data[i].split(',')[1]+".pcap' target='_blank'><i class='material-icons small grow'>file_download</i></a></td><td><i class='material-icons small grow' style='color: #009688' onclick=\"analyze_packets('/uploads/"+result.data[i].split(',')[1]+".json', grab_json=true); Materialize.toast('Reanalyzing "+filterXSS(result.data[i].split(',')[0])+"...', 4000);  $('#modal1').modal('close');\">description</i></td><td><i class='material-icons small grow' style='color: #f44336' onclick=\"delete_packets('"+filterXSS(result.data[i])+"');setTimeout(function(){open_modal('captures')},200);\">delete</i></td></tr>"
+                        }
+                        $('#packets_modal_body').html(html);
+                    } else {
+                        Materialize.toast('<text style="color: #f44336">'+result.data+'</text>', 4000);
+                    }
+                }).fail(function(error) {
+                    Materialize.toast('Error: ' + error.status + " " + error.statusText, 4000);
+                })
+            }
+            $('#modal1').modal('open');
+        };
+        const user_info = {"username":"pepper","is_admin":false,"email":"pepper.minstix@localhost.local","_id":"5bd73470388788152cf8b905"};
+        Array.prototype.clean = function(deleteValue) {
+            for (var i = 0; i < this.length; i++) {
+                if (this[i] == deleteValue) {         
+                this.splice(i, 1);
+                i--;
+                }
+            }
+            return this;
+        };
+
+        function build_pie_chart(element_id, an_array) {
+            var FRONTFCT = {};
+
+            FRONTFCT.init = function(){
+                FRONTFCT.pieCharts();
+            }
+
+            FRONTFCT.pieCharts = function(){
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable(an_array);
+                    data.sort([{column: 1, desc: true}]);
+                    var options = {
+                        colors:['#e4bb83','#6f93c5', '#2b5186', '#4e5d79','#e8d3b7', '#f1f1e6'],
+                        slices: {
+                            4: {
+                                textStyle: {color: '#333'}
+                            }, 
+                            5: {
+                                textStyle: {color: '#333'}
+                            }
+                        },
+                        chartArea: {
+                            left: 0,
+                            top: 40,
+                            width: '100%',
+                            height: '230',
+                        },
+                        backgroundColor: 'transparent',
+                fontSize: 10,
+                        tooltip: { trigger: 'none' },
+                        pieSliceBorderColor: "transparent",
+                        legend: { textStyle: {color: '#fff', fontSize: 16}}
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById(element_id));
+
+                    chart.draw(data, options);
+
+
+                    // the actual animation
+
+                    // get the main animation piece of pie (preferably the highest value) - in this case: Chart Stats 2
+                    var definingAnim = Number(data.og[1].c[1].v);
+
+                    // set a init value
+                    var percent = 0;
+
+                    // draw the chart every 20ms untill we reach the targeted value
+                    var handler = setInterval(function(){
+                        percent += 1;
+                        data.setValue(1, 1, percent);
+                        chart.draw(data, options);
+                        if (percent >= definingAnim){
+                            clearInterval(handler);
+                        }
+                    }, 20);
+
+                }
+            }
+
+            FRONTFCT.init();
+        }
+        function getSum(total, num) {
+            return total + num;
+        }
+        function percentages(arr) {
+            var a = [], b = [], prev;
+            
+            arr.sort();
+            for ( var i = 0; i < arr.length; i++ ) {
+                if ( arr[i] !== prev ) {
+                    a.push(arr[i]);
+                    b.push(1);
+                } else {
+                    b[b.length-1]++;
+                }
+                prev = arr[i];
+            }
+            res = []
+            for (var j=0; j < a.length; j++) {
+                res[j] = [a[j], (b[j] / b.reduce(getSum) * 100)];
+            }
+            return res;
+        }
+        function analyze_packets(packets, grab_json=false) {
+            //packets_tables_body
+            if (grab_json) {
+                $.getJSON( packets, function( data ) {
+                    analyze_packets(data.clean(""));
+                });
+            } else {
+                var html = "";
+                var ports = [];
+                var protocols = [];
+  .&p......              var talkers = [];
+                for (var p=0; p < packets.length; p++) {
+                    if (packets[p].length === 10) {
+                        var packet_time = packets[p][1].split('.')[0].trim();
+                        ports.push(packets[p][5]);
+                        ports.push(packets[p][7]);
+                        talkers.push(packets[p][4]);
+                        talkers.push(packets[p][6]);
+                        if (packets[p][3] === '6') {
+                            var protocol = 'TCP';
+                        } else {
+                            var protocol = 'UDP';
+                        }
+                        protocols.push(protocol);
+                        html += '<tr><td>'+filterXSS(packets[p][0].trim())+'</td><td>'+packet_time+'</td><td>'+filterXSS(packets[p][2].trim())+'</td><td>'+protocol+'</td><td>'+filterXSS(packets[p][4].trim())+'</td><td>'+filterXSS(packets[p][5].trim())+'</td><td>'+filterXSS(packets[p][6].trim())+'</td><td>'+filterXSS(packets[p][7].trim())+'</td><td>'+filterXSS(packets[p][8].trim())+'</td><td class="info_tooltipped tooltipped" data-position="top" data-delay="500" data-tooltip="'+filterXSS(packets[p][9].trim())+'" >'+filterXSS(packets[p][9].trim().substring(0, 40))+'</td></tr>'
+                    }
+                }
+                $('#packets_tables_body').html(html);
+                $('.info_tooltipped').tooltip({delay: 500});
+                var top_ports = percentages(ports);
+                var top_protocols = percentages(protocols);
+                var top_talkers = percentages(talkers);
+                top_protocols.unshift(['Top Protocols','Top Protocols']);
+                top_ports.unshift(['Top Ports','Top Ports']);
+                if (top_ports.length > 5) {top_ports.length=6}
+                top_talkers.unshift(['Top Talkers','Top Talkers']);
+                if (top_talkers.length > 5) {top_talkers.length=6}
+                $('.bargraph_container').css('display','block');
+                build_pie_chart('piechart_top_protocols', top_protocols);
+                build_pie_chart('piechart_dst_port', top_ports);
+                build_pie_chart('piechart_top_talkers', top_talkers);
+            }
+        };
+        //File upload Function. All extensions and sizes are validated server-side in app.js
+        $(function () {
+            'use strict';
+            $('#fileupload').fileupload({
+                url: '/api/upload',
+                dataType: 'json',
+                done: function (e, data) {
+                    if (data.result.request) {
+                        analyze_packets(data.result.data.clean(""));
+                    } else {
+                        Materialize.toast('<text style="color: #f44336">'+data.result.data+'</text>', 8000);
+                    }
+                    setTimeout(function(){
+                        $('#progress-level').css(
+                            'width',
+                            '0%'
+                        );
+                        $('#upload_traffic_button').removeClass('disabled');
+                        $('#sniff_traffic').prop('disabled', false);
+                    },2000);
+                },
+                progressall: function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    $('#progress-level').css(
+                        'width',
+                        progress + '%'
+                    );
+                },
+                change: function (e, data) {
+                    for (var findex=0; findex < data.files.length; findex++) {
+                        var file_obj = data.files[findex]
+                        //File Size and extensions are also validated server-side in app.js.
+                        var allowed_extensions = new Array('pcap','cap','dmp','pcapng');
+                        var max_file_size = 5000000;
+                        var file_extension = file_obj.name.split('.')
+                        var file_extension = file_extension[file_extension.length - 1].toLowerCase()
+                        var file_size = file_obj.size;
+                        if (allowed_extensions.includes(file_extension) && file_size < max_file_size) {
+                            Materialize.toast('Processing PCAP...', 4000);
+                            $('#upload_traffic_button').addClass('disabled');
+                            $('#sniff_traffic').prop('disabled', true);
+                            return true;
+                        } else if (!allowed_extensions[0] && file_size < max_file_size) {
+                            Materialize.toast('Processing PCAP...', 4000);
+                            $('#upload_traffic_button').addClass('disabled');
+                            $('#sniff_traffic').prop('disabled', true);
+                            return true 
+                        } else {
+                            $('#file_upload').val('');
+                            if (!allowed_extensions[0]) {
+                                Materialize.toast('<text style="color: #f44336">Incorrect file size (< '+((max_file_size/1000)/1000)+'MB)', 8000);
+                            } else {
+                                Materialize.toast('<text style="color: #f44336">Incorrect file type or size (< '+((max_file_size/1000)/1000)+'Mb). Allowed types are: '+allowed_extensions.join(',')+'</text>', 8000);
+                            }
+                            return false;
+                        }
+                    }
+                }
+            }).prop('disabled', !$.support.fileInput).parent().addClass($.support.fileInput ? undefined : 'disabled');
+        });
+        function progress_timed(miliseconds, original_time=false) {
+            if (typeof original_time !== 'number') {
+                $('#sniff_traffic').prop('disabled', true)
+                $('#upload_traffic_button').addClass('disabled')
+                original_time = miliseconds + 0;
+            }
+            var progress = (((original_time - miliseconds) / original_time) * 100);
+            $('#progress-level').css('width', progress + '%');
+            if (miliseconds - 50 >= 0) {
+                setTimeout(function(){
+                    progress_timed(miliseconds - 50, original_time=original_time)
+                }, 50);
+            } else {
+                $('#progress-level').css('width', '100%');
+                setTimeout(function(){
+                    $('#progress-level').css('width', '0%');
+                    $('#sniff_traffic').prop('disabled', false)
+                    $('#upload_traffic_button').removeClass('disabled')
+                    
+                }, 1000);
+            }
+        };
+        function delete_packets(packet_name_and_path) {
+            if (confirm('Delete This Pcap?')) {
+                $.post( "/api/delete",{'pcap':packet_name_and_path}).done(function( result ) {
+                    if (result.request) {
+                        Materialize.toast('<text style="color: #4caf50">'+result.data+'</text>', 4000);
+                    } else {
+                        Materialize.toast('<text style="color: #f44336">'+result.data+'</text>', 4000);
+                    }
+                }).fail(function(error) {
+                    Materialize.toast('Error: ' + error.status + " " + error.statusText, 4000);
+                })
+            } else {
+                return false;
+            }
+        };
+        $(document).ready(function(){ 
+            $('.modal').modal();
+            $('.file_upload_click').click(function(){
+                $('#fileupload').click();
+            });
+            $('#sniff_traffic').click(function(){
+                if (!$('#sniff_traffic').prop('disabled')) {
+                    Materialize.toast('<text style="color: #4caf50">Capturing 20 seconds of traffic. Please wait...</text>', 4000);
+                    $.post( "/api/sniff",{}).done(function( result ) {
+                        if (result.request) {
+                            setTimeout(function(){
+                                $.post( "/api/process",{'pcap':result.data}).done(function( result2 ) {
+                                    Materialize.toast('<text style="color: #4caf50">Capture Complete and Saved. Processing '+filterXSS(result.data)+'.pcap</text>', 5000);
+                                    if (result2.request) {
+                                        analyze_packets(result2.data.clean(""));
+                                    } else {
+                                        Materialize.toast('<text style="color: #f44336">'+result2.data+'</text>', 4000);
+                                    }
+                                }).fail(function(error) {
+                                    Materialize.toast('Error: ' + error.status + " " + error.statusText, 4000);
+                                })
+                            }, 20000);
+                            progress_timed(20000);
+                        } else {
+                            Materialize.toast('<text style="color: #f44336">'+result.data+'</text>', 4000);
+                        }
+                    }).fail(function(error) {
+                        Materialize.toast('Error: ' + error.status + " " + error.statusText, 4000);
+                    })
+                }
+            });
+            $('.tooltipped').tooltip({delay: 500});
+            if (user_info.is_admin || true) {
+                $('#sniff_traffic').removeClass('disabled');
+                $('#sniff_traffic_tooltip').attr("data-tooltip","Sniff 20 Seconds of traffic");
+                $('#sniff_traffic_tooltip').tooltip({delay: 500});
+            }
+        });
+    </script>
+</html>

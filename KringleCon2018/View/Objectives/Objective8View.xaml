@@ -1,0 +1,438 @@
+﻿<UserControl x:Class="KringleCon2018.Objectives.Objective8View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KringleCon2018.Objectives"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Foreground="White"
+             mc:Ignorable="d" Background="Black"
+             d:DesignHeight="6000" d:DesignWidth="800">
+    <ScrollViewer Name="Scroller" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Stretch" Background="Black">
+        <StackPanel Width="420">
+            <TextBlock Margin="10,10,10,10">
+                <Run FontSize="30" FontWeight="Regular" FontFamily="Sans"  FontStyle="Italic" Text="Difficulty:" />
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+                <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
+                <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                    <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
+                </Path>
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.05" ScaleY="0.05" CenterX="0" CenterY="0" />
+                            <RotateTransform CenterX="15" CenterY="20" Angle="180" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                </Canvas>
+            </TextBlock>
+            <TextBlock FontFamily="Sans"
+                       FontSize="16"
+                       Margin="10,10,10,10"
+                       TextAlignment="Justify"
+                       HorizontalAlignment="Left"
+                       TextWrapping="Wrap" 
+                       Width="400">
+                <Run Text="Santa has introduced a web-based packet capture and analysis tool at" />
+                <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://packalyzer.kringlecastle.com">https://packalyzer.kringlecastle.com</Hyperlink>
+                <Run Text="to support the elves and their information security work. Using the system, access and decrypt HTTP/2 network activity. What is the name of the song described in the document sent from Holly Evergreen to Alabaster Snowball?"/>
+                <Run FontStyle="Italic" Text="For hints on achieving this objective, please visit SugarPlum Mary and help her with the" />
+                <Run FontWeight="Bold" FontStyle="Italic" Text="Python Escape from LA" />
+                <Run FontStyle="Italic" Text="Cranberry Pi terminal challenge." />
+            </TextBlock>
+            <Border BorderBrush="White" BorderThickness="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" BorderBrush="White" BorderThickness="2">
+                        <TextBlock FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="Elf" />
+                    </Border>
+                    <Border Grid.Row="0" Grid.Column="1" BorderBrush="White" BorderThickness="2">
+                        <TextBlock FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="CranberyPi Game" />
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="0" BorderBrush="White" BorderThickness="2" VerticalAlignment="Center">
+                        <TextBlock FontFamily="Sans" FontSize="16" TextWrapping="Wrap" Text="Alabaster Snowball" />
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="1" BorderBrush="White" BorderThickness="2">
+                        <TextBlock VerticalAlignment="Center" FontFamily="Sans" FontSize="16">
+                        <Hyperlink Command="{Binding Path=NavigateCommand}" CommandParameter="https://docker.kringlecon.com/?challenge=python_docker_challenge">
+                            Python Escape from LA
+                        </Hyperlink>
+                        </TextBlock>
+                    </Border>
+                </Grid>
+            </Border>
+            <Border BorderBrush="White" BorderThickness="2">
+                <StackPanel>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                        <Run>The Alabaster Snowball terminal opens directly into a python shell in which we have to try and break out of.</Run>
+                        <Run>In order to test what is restricted run the following commands to see which on is allowed:</Run><LineBreak/>
+                        <Label Style="{StaticResource kbd}">import</Label><LineBreak/>
+                        <Label Style="{StaticResource kbd}">exec</Label><LineBreak/>
+                        <Label Style="{StaticResource kbd}">compile</Label><LineBreak/>
+                        <Label Style="{StaticResource kbd}">eval</Label>
+                    </TextBlock>
+                    <Image Source="{Binding PythonCommandCheck}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                        1) <Run>From the results, we can see that the eval function is still allowed.  We can use to attempt our escape from the python shell.</Run><LineBreak/><LineBreak/>
+                        2) <Run>We will start by trying to "import os" using the eval method and calling import as a function.</Run><LineBreak/>
+                        <Label Style="{StaticResource kbd}">os = eval('import os')</Label><LineBreak/><LineBreak/>
+                        3) <Run>We get a message back letting us know that the command import is prohibited. Try breaking up the string to see if it works that way.</Run><LineBreak/>
+                        <Label Style="{StaticResource kbd}">os = eval('imp'+'ort os')</Label><LineBreak/><LineBreak/>
+                        4) <Run>We get another error message back about invalid syntax.  This is because we need to call the function import and the syntax is a little different.  Try calling the function.</Run><LineBreak/>
+                        <Label Style="{StaticResource kbd}">os = eval('__import__("os")')</Label><LineBreak/><LineBreak/>
+                        5) <Run>We get a message back again letting us know that the command import is prohibited. Let's break up the string again to see if it works that way.</Run><LineBreak/><LineBreak/>
+                        <Label Style="{StaticResource kbd}">os = eval('__imp'+'ort__("os")')</Label><LineBreak/><LineBreak/>
+                        6) <Run>Success! We were able to import the os library. Now we need to be able to run some shell commands to break out of the python shell.</Run>
+                    </TextBlock>
+                    <Image Source="{Binding PythonImportOS}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                    7) <Run>So eval works and we can import os, now lets run a shell using the same techniques.</Run><LineBreak/>
+                        <Label Style="{StaticResource kbd}">eval('os.sy'+'stem("/bin/sh")')</Label><LineBreak/><LineBreak/>
+                        <Run>With this, you are able to get shell access and have escaped the python shell.</Run><LineBreak/><LineBreak/>
+                        8) <Run>Now, instead of running this, let's expand on what we have above to run the shell script "./i_escaped" to complete the terminal challenge.</Run>
+                        <Label Style="{StaticResource kbd}">eval('os.sy'+'stem("./i_escaped")')</Label><LineBreak/><LineBreak/>
+                        <Run>That's it, we escaped and sent the lizard packing!</Run>
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               Width="400"
+                               TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Text="Answer" />:<LineBreak/>
+                        <Label Style="{StaticResource kbd}">os = eval('__import__("os")')</Label><LineBreak/>
+                        <Label Style="{StaticResource kbd}">eval('os.sy'+'stem("./i_escaped")')</Label>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="White" BorderThickness="2">
+                <StackPanel>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                        1) <Run>For the objective challenge, we need to go over the site https://packalyzer.kringlecastle.com.  At this site, we need to access and decrypt HTTP/2 network activity.  From that we need to find the song described in a document sent from Holly Evergreen to Alabaster Snowball.</Run>
+                        <Run>To start off, I registered a new account so that I could log into the site.</Run> <LineBreak/><LineBreak/>
+                        2) <Run>After logging in, view the source of the site to look for some clues.</Run>
+                        <Run>In the source code, I found this comment that shows the server-side javascript file being used to validate extensions and sizes:</Run>
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource kbd_tb}">//File upload Function. All extensions and sizes are validated server-side in app.js</TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                        3) <Run>The path to </Run>
+                        <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://packalyzer.kringlecastle.com/app.js">https://packalyzer.kringlecastle.com/app.js</Hyperlink>
+                        <Run>does not exist, but maybe we can figure out how to still access this file.</Run>
+                        <Run>When checking for directory browsing, I found that the following paths generated some interesting error messages from the server:</Run>
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Style="{StaticResource kbd_tb}">
+                        <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://packalyzer.kringlecastle.com/pub/css/blahblahblah">https://packalyzer.kringlecastle.com/pub/css/blahblahblah</Hyperlink><LineBreak/>
+                        <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://packalyzer.kringlecastle.com/pub/blahblahblah">https://packalyzer.kringlecastle.com/pub/blahblahblah</Hyperlink>
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                        The error messages looked like this:
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Style="{StaticResource kbd_tb}">
+                        Error: ENOENT: no such file or directory, open '/opt/http2/pub//blahblahblah'
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                        <Run>This tells us that files from the server are being opened when displaying pages.  Maybe we can use this to open app.js file from the server?</Run><LineBreak/><LineBreak/>
+                        4) <Run>Since we know that files are being opened from the pub directory, try accessing the app.js file from the pub directory instead.</Run>
+                        <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://packalyzer.kringlecastle.com/pub/app.js">https://packalyzer.kringlecastle.com/pub/app.js</Hyperlink><LineBreak/><LineBreak/>
+                        <Run>This time we have access to the server file and we can now see it's contents.</Run>
+                    </TextBlock>
+                    <ContentControl Style="{StaticResource panel-default}" Margin="10">
+                        <StackPanel>
+                            <ContentControl Style="{StaticResource panel-heading-default}" Content="app.js"/>
+                            <ContentControl Style="{StaticResource panel-body}">
+                                <ContentControl.Content>
+                                    <TextBox
+                                        Height="200"
+                                        Width="350"
+                                        Background="Black"
+                                        Foreground="White"
+                                        TextWrapping="NoWrap"
+                                        AcceptsReturn="True"
+                                        HorizontalScrollBarVisibility="Auto"
+                                        VerticalScrollBarVisibility="Auto"
+                                        Text="{Binding AppJS}" />
+                                </ContentControl.Content>
+                            </ContentControl>
+                        </StackPanel>
+                    </ContentControl>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                        5) <Run>Look at the following lines of code in the app.js file:</Run><LineBreak/>
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Stretch" TextAlignment="Left" Style="{StaticResource kbd_tb}">
+                        const dev_mode = true;<LineBreak/><LineBreak/>
+                        const key_log_path = ( !dev_mode || __dirname + process.env.DEV + process.env.SSLKEYLOGFILE )<LineBreak/><LineBreak/>
+                        if (dev_mode) {<LineBreak/>
+    //Can set env variable to open up directories during dev<LineBreak/>
+    const env_dirs = load_envs();<LineBreak/>
+} else {<LineBreak/>
+    const env_dirs = ['/pub/','/uploads/'];<LineBreak/><LineBreak/>
+    //Grabs directory which should be first element in array
+    let dir = split_path[0].toUpperCase();<LineBreak/><LineBreak/>
+                         if (!['index.html','home.html','register.html'].includes(filename)) {<LineBreak/>
+    ctx.set('Content-Type',mime.lookup(__dirname+(process.env[dir] || '/pub/')+filename))<LineBreak/>
+    ctx.body = fs.readFileSync(__dirname+(process.env[dir] || '/pub/')+filename)<LineBreak/>
+    } else {<LineBreak/>
+    ctx.status=404;<LineBreak/>
+    ctx.body='Not Found';<LineBreak/>
+    }<LineBreak/>
+}
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                        <Run>You can see that dev_mode is hard-coded to true on the server.  When dev_mode is true, the server environment variables are all loaded as environment directories instead of just "pub" and "uploads".</Run><LineBreak/><LineBreak/>
+                        <Run>You can also see that the contents of the body of the page is being populated with files read from the server.  The path to the server file is coming from the first url directory path.</Run>
+                        <Run>For example, go to the follwing link:</Run> <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://packalyzer.kringlecastle.com/SHELL/">https://packalyzer.kringlecastle.com/SHELL/</Hyperlink><LineBreak/>
+                        <Run>For this link the first url directory is "SHELL".  The code above will take the value of the "SHELL" environment variable and try to read a file with that environment variable value in the file path.</Run>
+                        <Run>When this generates an error, you can see the value of the SHELL environment variable within the error.</Run>
+                        <Run>The url link above will generate the following error message:</Run>
+                    </TextBlock>
+                    <TextBlock Style="{StaticResource kbd_tb}">
+                        Error: ENOENT: no such file or directory, open '/opt/http2/bin/false/'
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="398">
+                        <Run>From this, we can see that the environment variable for SHELL is = "/bin/false".</Run><LineBreak/><LineBreak/>
+                        6) <Run>From this, we need to capture the DEV and SSLKEYLOGFILE environment variables in order to find the path to "key_log_path" which is the options for the http2 server for store ssl key logs.</Run>
+                        <Run>Navigate to the following 2 URL paths to obtain the values for DEV and SSLKEYLOGFILE environment variable values:</Run><LineBreak/>
+                        <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://packalyzer.kringlecastle.com/DEV/app.js">https://packalyzer.kringlecastle.com/DEV/app.js</Hyperlink><LineBreak/>
+                        <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://packalyzer.kringlecastle.com/SSLKEYLOGFILE/app.js">https://packalyzer.kringlecastle.com/SSLKEYLOGFILE/app.js</Hyperlink><LineBreak/><LineBreak/>
+                        <Run>From the error messages you can see that the environment variable DEV has the value of dev/, and the environment variable for SSLKEYLOGFILE has the value of packalyzer_clientrandom_ssl.log</Run><LineBreak/><LineBreak/>
+                        7) <Run>Now we can construct the URL path to the ssl key log files being used on the server.</Run><LineBreak/>
+                        <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://packalyzer.kringlecastle.com/dev/packalyzer_clientrandom_ssl.log">https://packalyzer.kringlecastle.com/dev/packalyzer_clientrandom_ssl.log</Hyperlink><LineBreak/><LineBreak/>
+                        <Run>We are now able to access the client ssl key logs generated by the running server.</Run><LineBreak/><LineBreak/>
+                        8) <Run>Now we want to generate/analyze a PCAP file with the Packalyzer site, access the client ssl key logs, save them, and then use the PCAP and ssl key logs with Wireshark to decrypt the http2 SSL traffic.</Run><LineBreak/>
+                        <Run>When doing so, we get the following PCAP and SSL Key Log files:</Run>
+                    </TextBlock>
+                    <Button Command="{Binding DownloadFileCommand}" CommandParameter="{Binding PCAPP1}">Download: P1__00074743__1-1-2019__23-25-27.pcap</Button>
+                    <Button Command="{Binding DownloadFileCommand}" CommandParameter="{Binding SSLLog1}">Download: P1__packalyzer__clientrandom__ssl.log.txt</Button>
+                    <Button Command="{Binding DownloadFileCommand}" CommandParameter="{Binding PCAPP2}">Download: P2__08265698__1-1-2019__23-49-15.pcap</Button>
+                    <Button Command="{Binding DownloadFileCommand}" CommandParameter="{Binding SSLLog2}">Download: P2__packalyzer__clientrandom__ssl.log.txt</Button>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                        9) <Run>Open Wireshark.  Click on "Edit -> Preferences...".  This will open the preferences window.  In here, expand "Protocols" and select "SSL".  The the SSL Protocols settings, set the "(Pre)-Master-Secret log filename" to that of the ssl.log.txt file from above.  Then, open the corresponding PCAP file with Wireshark.</Run><LineBreak/><LineBreak/>
+                        10) <Run>Apply the "http2" display filter to filter only to http2 traffic. Examine all the lines that have the following associated info "DATA[1] (text/html)" and DATA[1] (application/json).</Run><LineBreak/><LineBreak/>
+                        <Run>You will be able to capture the long page, packalyzer page while logged in, and 3 json files that contain the username and password data sent to the packalyzer API.</Run>
+                    </TextBlock>
+                    <ContentControl Style="{StaticResource panel-default}" Margin="10">
+                        <StackPanel>
+                            <ContentControl Style="{StaticResource panel-heading-default}" Content="login.html"/>
+                            <ContentControl Style="{StaticResource panel-body}">
+                                <ContentControl.Content>
+                                    <TextBox
+                                        Height="200"
+                                        Width="350"
+                                        Background="Black"
+                                        Foreground="White"
+                                        TextWrapping="NoWrap"
+                                        AcceptsReturn="True"
+                                        HorizontalScrollBarVisibility="Auto"
+                                        VerticalScrollBarVisibility="Auto"
+                                        Text="{Binding LoginHTML}" />
+                                </ContentControl.Content>
+                            </ContentControl>
+                        </StackPanel>
+                    </ContentControl>
+                    <ContentControl Style="{StaticResource panel-default}" Margin="10">
+                        <StackPanel>
+                            <ContentControl Style="{StaticResource panel-heading-default}" Content="index.html"/>
+                            <ContentControl Style="{StaticResource panel-body}">
+                                <ContentControl.Content>
+                                    <TextBox
+                                        Height="200"
+                                        Width="350"
+                                        Background="Black"
+                                        Foreground="White"
+                                        TextWrapping="NoWrap"
+                                        AcceptsReturn="True"
+                                        HorizontalScrollBarVisibility="Auto"
+                                        VerticalScrollBarVisibility="Auto"
+                                        Text="{Binding IndexHTML}" />
+                                </ContentControl.Content>
+                            </ContentControl>
+                        </StackPanel>
+                    </ContentControl>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                        These are the HTML pages retrieved from the PCAPs.  Below are the 3 json string retrieved from the PCAP files.
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Stretch" Style="{StaticResource kbd_tb}">{"username": "bushy", "password": "Floppity_Floopy-flab19283"}</TextBlock>
+                    <TextBlock HorizontalAlignment="Stretch" Style="{StaticResource kbd_tb}">{"username": "pepper", "password": "Shiz-Bamer_wabl182"}</TextBlock>
+                    <TextBlock HorizontalAlignment="Stretch" Style="{StaticResource kbd_tb}">{"username": "alabaster", "password": "Packer-p@re-turntable192"}</TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                        11) <Run>Now that we have the credentials for 3 elves, login as each of them and explore.</Run>
+                        <Run>Bush and Pepper are both non-admin accounts.</Run>
+                        <Run>Alabaster is the admin account.</Run>
+                        <Run>Also, Alabaster has a super secret PCAP file stored in his captures for his account.  Open the PCAP file with Wireshark and analyze it's contents.</Run>
+                    </TextBlock>
+                    <Button Command="{Binding DownloadFileCommand}" CommandParameter="{Binding SecretPCAP}">Download: ALABASTER_super_secret_packet_capture.pcap</Button>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                        While analyzing the PCAP, we find that there is an email with an attachment in the email.
+                    </TextBlock>
+                    <ContentControl Style="{StaticResource panel-default}" Margin="10">
+                        <StackPanel>
+                            <ContentControl Style="{StaticResource panel-heading-default}" Content="Secret Email"/>
+                            <ContentControl Style="{StaticResource panel-body}">
+                                <ContentControl.Content>
+                                    <TextBox
+                                        Height="200"
+                                        Width="350"
+                                        Background="Black"
+                                        Foreground="White"
+                                        TextWrapping="NoWrap"
+                                        AcceptsReturn="True"
+                                        HorizontalScrollBarVisibility="Auto"
+                                        VerticalScrollBarVisibility="Auto"
+                                        Text="{Binding SecretEmail}" />
+                                </ContentControl.Content>
+                            </ContentControl>
+                        </StackPanel>
+                    </ContentControl>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                        12) <Run>Using online tools to decode the base64 encoded attachment, we find that it is a PDF file.</Run>
+                    </TextBlock>
+                    <Button Command="{Binding DownloadFileCommand}" CommandParameter="{Binding EmailAttachment}">Download: mailattachment.pdf</Button>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap" 
+                               Width="400">
+                        13) <Run>In the email, Holly let's Alabaster know that Santa's favorite key was D.</Run>
+                        <Run>In the attachment, the document explains the piano keys, the key tones, half and full tone steps between the keys and how to transpose keys from one key to another.  The document also goes through an example with the song "Mary Had a Little Lamb".</Run>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+            <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10,10,10,10"
+                               HorizontalAlignment="Left"
+                               Width="400"
+                               TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Text="Answer" />: Mary Had a Little Lamb
+            </TextBlock>
+            <TextBlock><LineBreak /></TextBlock>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
