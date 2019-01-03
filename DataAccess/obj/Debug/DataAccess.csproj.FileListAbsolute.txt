@@ -1,6 +1,0 @@
-C:\Users\djeng\documents\visual studio 2017\Projects\Census\DataAccess\bin\Debug\DataAccess.dll
-C:\Users\djeng\documents\visual studio 2017\Projects\Census\DataAccess\bin\Debug\DataAccess.pdb
-C:\Users\djeng\documents\visual studio 2017\Projects\Census\DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache
-C:\Users\djeng\documents\visual studio 2017\Projects\Census\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
-C:\Users\djeng\documents\visual studio 2017\Projects\Census\DataAccess\obj\Debug\DataAccess.dll
-C:\Users\djeng\documents\visual studio 2017\Projects\Census\DataAccess\obj\Debug\DataAccess.pdb
