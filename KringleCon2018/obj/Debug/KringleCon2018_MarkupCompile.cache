@@ -8,13 +8,13 @@ C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon20
 KringleCon2018
 none
 false
-DEBUG;TRACE
+TRACE;DEBUG
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\App.xaml
 171636736826
 4-1502578899
-52930634752
+57448666017
 144769855485
 Resources\Icons.xaml;Resources\IconsNonShared.xaml;View\KringleConNarrativeView.xaml;View\KringleConObjectivesView.xaml;View\Objectives\Objective10View.xaml;View\Objectives\Objective1View.xaml;View\Objectives\Objective2View.xaml;View\Objectives\Objective3View.xaml;View\Objectives\Objective4View.xaml;View\Objectives\Objective5View.xaml;View\Objectives\Objective6View.xaml;View\Objectives\Objective7View.xaml;View\Objectives\Objective8View.xaml;View\Objectives\Objective9View.xaml;View\ShellView.xaml;Windows\BaseDialogWindow.xaml;Windows\BaseWindow.xaml;
 
-False
+True
 
