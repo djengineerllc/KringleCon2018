@@ -6,12 +6,11 @@
              xmlns:local="clr-namespace:KringleCon2018.Objectives"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Foreground="White"
-             mc:Ignorable="d" Background="Black"
+             mc:Ignorable="d"
              d:DesignHeight="1800" d:DesignWidth="800">
-    <ScrollViewer Name="Scroller" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Stretch" Background="Black">
-        <StackPanel Width="420">
-            <TextBlock Margin="10,10,10,10">
+    <ScrollViewer Name="Scroller" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Stretch">
+        <StackPanel>
+            <TextBlock Margin="10" HorizontalAlignment="Center">
                 <Run FontSize="30" FontWeight="Regular" FontFamily="Sans"  FontStyle="Italic" Text="Difficulty:" />
                 <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
                 <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
@@ -25,7 +24,7 @@
                     </Canvas.RenderTransform>
                 </Canvas>
                 <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
-                <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                <Path Width="550" Height="740" Fill="{DynamicResource IdealForegroundDisabledBrush}" StrokeLineJoin="Round">
                     <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
                 </Path>
                     <Canvas.RenderTransform>
@@ -36,7 +35,7 @@
                     </Canvas.RenderTransform>
                 </Canvas>
                 <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
-                <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                <Path Width="550" Height="740" Fill="{DynamicResource IdealForegroundDisabledBrush}" StrokeLineJoin="Round">
                     <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
                 </Path>
                     <Canvas.RenderTransform>
@@ -47,7 +46,7 @@
                     </Canvas.RenderTransform>
                 </Canvas>
                 <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
-                <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                <Path Width="550" Height="740" Fill="{DynamicResource IdealForegroundDisabledBrush}" StrokeLineJoin="Round">
                     <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
                 </Path>
                     <Canvas.RenderTransform>
@@ -58,7 +57,7 @@
                     </Canvas.RenderTransform>
                 </Canvas>
                 <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
-                <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                <Path Width="550" Height="740" Fill="{DynamicResource IdealForegroundDisabledBrush}" StrokeLineJoin="Round">
                     <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
                 </Path>
                     <Canvas.RenderTransform>
@@ -71,53 +70,46 @@
             </TextBlock>
             <TextBlock FontFamily="Sans"
                        FontSize="16"
-                       Margin="10,10,10,10"
+                       Margin="10"
                        TextAlignment="Justify"
                        HorizontalAlignment="Left"
-                       TextWrapping="Wrap" 
-                       Width="400">
+                       TextWrapping="Wrap">
                 <Run Text="Who submitted (First Last) the rejected talk titled Data Loss for Rainbow Teams: A Path in the Darkness?" />
                 <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://cfp.kringlecastle.com/">Please analyze the CFP site to find out</Hyperlink>.
                 <Run FontStyle="Italic" Text="For hints on achieving this objective, please visit Minty Candycane and help her with the" />
                 <Run FontWeight="Bold" FontStyle="Italic" Text="The Name Game" />
                 <Run FontStyle="Italic" Text="Cranberry Pi terminal challenge." />
             </TextBlock>
-            <Border BorderBrush="White" BorderThickness="2">
-                <Grid>
+            <Border Margin="10"
+                    BorderBrush="{DynamicResource AccentColorBrush}"
+                    BorderThickness="2">
+                <Grid ShowGridLines="True">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="120" />
+                        <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Border Grid.Row="0" Grid.Column="0" BorderBrush="White" BorderThickness="2">
-                        <TextBlock FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="Elf" />
-                    </Border>
-                    <Border Grid.Row="0" Grid.Column="1" BorderBrush="White" BorderThickness="2">
-                        <TextBlock FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="CranberyPi Game" />
-                    </Border>
-
-                    <Border Grid.Row="1" Grid.Column="0" BorderBrush="White" BorderThickness="2" VerticalAlignment="Center">
-                        <TextBlock FontFamily="Sans" FontSize="16" TextWrapping="Wrap" Text="Minty Candycane" />
-                    </Border>
-                    <Border Grid.Row="1" Grid.Column="1" BorderBrush="White" BorderThickness="2">
-                        <TextBlock VerticalAlignment="Center" FontFamily="Sans" FontSize="16">
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="2" FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="Elf" />
+                    <TextBlock Grid.Row="0" Grid.Column="1" Margin="2" FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="CranberyPi Game" />
+                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="2" FontFamily="Sans" FontSize="16" TextWrapping="Wrap" Text="Minty Candycane" />
+                    <TextBlock Grid.Row="1" Grid.Column="1" Margin="2" VerticalAlignment="Center" FontFamily="Sans" FontSize="16">
                         <Hyperlink Command="{Binding Path=NavigateCommand}" CommandParameter="https://docker.kringlecon.com/?challenge=pwshmenu">
                             The Name Game
                         </Hyperlink>
-                        </TextBlock>
-                    </Border>
+                    </TextBlock>
                 </Grid>
             </Border>
-            <Border BorderBrush="White" BorderThickness="2">
+            <Border Margin="10"
+                    BorderBrush="{DynamicResource AccentColorBrush}"
+                    BorderThickness="2">
                 <StackPanel>
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               Width="400"
                                TextWrapping="WrapWithOverflow">
                         <Run Text="The Minty Candycane terminal loads up with a PowerShell menu system.  To try to break out of the PowerShell menu, input" />
                         <Label Style="{StaticResource kbd}">&amp;</Label>
@@ -132,30 +124,35 @@
                         4) <Run>View the contents of menu.ps1 in order to see how it is interacting with the onboard database "onboard.db" by running the command </Run>
                         <Label Style="{StaticResource kbd}">cat ./menu.ps1</Label>
                     </TextBlock>
-                    <ContentControl Style="{StaticResource panel-default}" Margin="10">
-                        <StackPanel>
-                            <ContentControl Style="{StaticResource panel-heading-default}" Content="menu.ps1"/>
-                            <ContentControl Style="{StaticResource panel-body}">
-                                <ContentControl.Content>
-                                    <TextBox
-                                        Height="200"
-                                        Width="350"
-                                        Background="Black"
-                                        Foreground="White"
-                                        TextWrapping="NoWrap"
-                                        AcceptsReturn="True"
-                                        HorizontalScrollBarVisibility="Auto"
-                                        VerticalScrollBarVisibility="Auto"
-                                        Text="{Binding MenuPS1}" />
-                                </ContentControl.Content>
-                            </ContentControl>
-                        </StackPanel>
-                    </ContentControl>
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               Width="400"
+                               TextWrapping="WrapWithOverflow">
+                        <ContentControl Style="{StaticResource panel-default}">
+                            <StackPanel>
+                                <ContentControl Style="{StaticResource panel-heading-default}" Content="menu.ps1"/>
+                                <ContentControl Style="{StaticResource panel-body}">
+                                    <ContentControl.Content>
+                                        <TextBox
+                                            Height="200"
+                                            Width="350"
+                                            Background="Black"
+                                            Foreground="White"
+                                            TextWrapping="NoWrap"
+                                            AcceptsReturn="True"
+                                            HorizontalScrollBarVisibility="Auto"
+                                            VerticalScrollBarVisibility="Auto"
+                                            Text="{Binding MenuPS1}" />
+                                    </ContentControl.Content>
+                                </ContentControl>
+                            </StackPanel>
+                        </ContentControl>
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               HorizontalAlignment="Left"
                                TextWrapping="WrapWithOverflow">
                         <Run>One of the first things I notice, that there is powershell access by entering the number 9 in the first menu sytem.</Run>
                         <Run>I also notice that you the program interacts with the onboard.db file using the command</Run>
@@ -164,9 +161,8 @@
                     </TextBlock>
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               Width="400"
                                TextWrapping="WrapWithOverflow">
                         5) <Run>Open the SQLite3 database.  In the shell, run the command:</Run>
                         <Label Style="{StaticResource kbd}">sqlite3</Label>.  This opens the sqlite prompt and shows you we can open the database file by running the command:
@@ -177,28 +173,33 @@
                         <Label Style="{StaticResource kbd}">SELECT * FROM onboard WHERE lname = 'Chan';</Label> in order to get the information on the Chan individual.<LineBreak /><LineBreak/>
                         7) <Run>You get the following result returned:</Run>
                     </TextBlock>
-                    <ContentControl Style="{StaticResource panel-default}" Margin="10">
-                        <StackPanel>
-                            <ContentControl Style="{StaticResource panel-heading-default}" Content="SELECT * FROM onboard WHERE lname = 'Chan';"/>
-                            <ContentControl Style="{StaticResource panel-body}">
-                                <ContentControl.Content>
-                                    <TextBox
-                                        Width="350"
-                                        Background="Black"
-                                        Foreground="White"
-                                        TextWrapping="Wrap"
-                                        AcceptsReturn="True"
-                                        HorizontalScrollBarVisibility="Auto"
-                                        Text="84|Scott|Chan|48 Colorado Way||Los Angeles|90067|4017533509|scottmchan90067@gmail.com" />
-                                </ContentControl.Content>
-                            </ContentControl>
-                        </StackPanel>
-                    </ContentControl>
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               Width="400"
+                               TextWrapping="WrapWithOverflow">
+                        <ContentControl Style="{StaticResource panel-default}">
+                            <StackPanel>
+                                <ContentControl Style="{StaticResource panel-heading-default}" Content="SELECT * FROM onboard WHERE lname = 'Chan';"/>
+                                <ContentControl Style="{StaticResource panel-body}">
+                                    <ContentControl.Content>
+                                        <TextBox
+                                            Width="350"
+                                            Background="Black"
+                                            Foreground="White"
+                                            TextWrapping="Wrap"
+                                            AcceptsReturn="True"
+                                            HorizontalScrollBarVisibility="Auto"
+                                            Text="84|Scott|Chan|48 Colorado Way||Los Angeles|90067|4017533509|scottmchan90067@gmail.com" />
+                                    </ContentControl.Content>
+                                </ContentControl>
+                            </StackPanel>
+                        </ContentControl>
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               HorizontalAlignment="Left"
                                TextWrapping="WrapWithOverflow">
                         8) Run <Label Style="{StaticResource kbd}">.exit</Label> to exit the sqlite prompt.  Run the command <Label Style="{StaticResource kbd}">./runtoanswer</Label> and answer the question.
                     </TextBlock>
@@ -212,47 +213,58 @@
                     </TextBlock>
                 </StackPanel>
             </Border>
-            <Border BorderBrush="White" BorderThickness="2">
+            <Border Margin="10"
+                    BorderBrush="{DynamicResource AccentColorBrush}"
+                    BorderThickness="2">
                 <StackPanel>
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               Width="400"
                                TextWrapping="WrapWithOverflow">
                         1) For the Objective challenge, navigate to <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://cfp.kringlecastle.com/">Kringle Castle CFP (Call For Papers)</Hyperlink> site.<LineBreak />
                         2) Click on the <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://cfp.kringlecastle.com/cfp/cfp.html">CFP link</Hyperlink> on the website: <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://cfp.kringlecastle.com/cfp/cfp.html">https://cfp.kringlecastle.com/cfp/cfp.html</Hyperlink>.<LineBreak />
                         3) From the url, take off the "/cfp.html" and go to the constructed link: <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://cfp.kringlecastle.com/cfp">https://cfp.kringlecastle.com/cfp</Hyperlink> to see the directory listing.<LineBreak />
                         4) In the directory listing you can see the "cfp.html" page, and you can see "rejected-talks.csv" file.  View the contents of "rejected-talks.csv".
                     </TextBlock>
-                    <ContentControl Style="{StaticResource panel-default}" Margin="10">
-                        <StackPanel>
-                            <ContentControl Style="{StaticResource panel-heading-default}" Content="rejected-talks.csv"/>
-                            <ContentControl Style="{StaticResource panel-body}">
-                                <ContentControl.Content>
-                                    <TextBox
-                                        Height="200"
-                                        Width="350"
-                                        Background="Black"
-                                        Foreground="White"
-                                        TextWrapping="NoWrap"
-                                        AcceptsReturn="True"
-                                        HorizontalScrollBarVisibility="Auto"
-                                        VerticalScrollBarVisibility="Auto"
-                                        Text="{Binding RejectedTalksCSV}" />
-                                </ContentControl.Content>
-                            </ContentControl>
-                        </StackPanel>
-                    </ContentControl>
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               Width="400"
+                               TextWrapping="WrapWithOverflow">
+                        <ContentControl Style="{StaticResource panel-default}">
+                            <StackPanel>
+                                <ContentControl Style="{StaticResource panel-heading-default}" Content="rejected-talks.csv"/>
+                                <ContentControl Style="{StaticResource panel-body}">
+                                    <ContentControl.Content>
+                                        <TextBox
+                                            Height="200"
+                                            Width="350"
+                                            Background="Black"
+                                            Foreground="White"
+                                            TextWrapping="NoWrap"
+                                            AcceptsReturn="True"
+                                            HorizontalScrollBarVisibility="Auto"
+                                            VerticalScrollBarVisibility="Auto"
+                                            Text="{Binding RejectedTalksCSV}" />
+                                    </ContentControl.Content>
+                                </ContentControl>
+                            </StackPanel>
+                        </ContentControl>
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               HorizontalAlignment="Left"
                                TextWrapping="WrapWithOverflow">
                         You can find this line in the CSV file which answers the question "Who submitted (First Last) the rejected talk titled Data Loss for Rainbow Teams: A Path in the Darkness?"
                     </TextBlock>
-                    <ContentControl Style="{StaticResource panel-default}" Margin="10">
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="WrapWithOverflow">
+                    <ContentControl Style="{StaticResource panel-default}">
                         <StackPanel>
                             <ContentControl Style="{StaticResource panel-heading-default}" Content="John McClane (Director of Security)"/>
                             <ContentControl Style="{StaticResource panel-body}">
@@ -269,6 +281,7 @@
                             </ContentControl>
                         </StackPanel>
                     </ContentControl>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <TextBlock FontFamily="Sans"

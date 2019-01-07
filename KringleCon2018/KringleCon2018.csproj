@@ -62,7 +62,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <StartupObject>KringleCon2018.Program</StartupObject>
+    <StartupObject>KringleCon2018.App</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>C91FC1FC83C2F225F7E8C0A6D126A4BA8BDCD3F4</ManifestCertificateThumbprint>
