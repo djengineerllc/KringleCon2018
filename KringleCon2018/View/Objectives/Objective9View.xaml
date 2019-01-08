@@ -2,12 +2,10 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:KringleCon2018.Objectives"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Foreground="White"
-             mc:Ignorable="d" Background="Black"
+             mc:Ignorable="d"
              d:DesignHeight="1800" d:DesignWidth="800">
     <UserControl.Resources>
         <SolidColorBrush x:Key="HeaderBackground" Color="{StaticResource Primary700}"/>
@@ -221,9 +219,9 @@
             </ControlTemplate.Triggers>
         </ControlTemplate>
     </UserControl.Resources>
-    <ScrollViewer Name="Scroller" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Stretch" Background="Black">
-        <StackPanel Width="420">
-            <TextBlock Margin="10,10,10,10">
+    <ScrollViewer Name="Scroller" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Stretch">
+        <StackPanel>
+            <TextBlock Margin="10" HorizontalAlignment="Center">
                 <Run FontSize="30" FontWeight="Regular" FontFamily="Sans"  FontStyle="Italic" Text="Difficulty:" />
                 <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
                 <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
@@ -283,51 +281,42 @@
             </TextBlock>
             <TextBlock FontFamily="Sans"
                        FontSize="16"
-                       Margin="10,10,10,10"
+                       Margin="10"
                        TextAlignment="Justify"
                        HorizontalAlignment="Left"
-                       TextWrapping="Wrap" 
-                       Width="400">
+                       TextWrapping="Wrap">
                 <Run Text="Alabaster Snowball is in dire need of your help. Santa's file server has been hit with malware. Help Alabaster Snowball deal with the malware on Santa's server by completing several tasks." />
                 <Run FontStyle="Italic" Text="For hints on achieving this objective, please visit Shinny Upatree and help him with the" />
                 <Run FontWeight="Bold" FontStyle="Italic" Text="Sleigh Bell Lottery" />
                 <Run FontStyle="Italic" Text="Cranberry Pi terminal challenge." />
             </TextBlock>
-            <Border BorderBrush="White" BorderThickness="2">
-                <Grid>
+            <Border Margin="10"
+                    BorderBrush="{DynamicResource AccentColorBrush}"
+                    BorderThickness="2">
+                <Grid ShowGridLines="True">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="120" />
+                        <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Border Grid.Row="0" Grid.Column="0" BorderBrush="White" BorderThickness="2">
-                        <TextBlock FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="Elf" />
-                    </Border>
-                    <Border Grid.Row="0" Grid.Column="1" BorderBrush="White" BorderThickness="2">
-                        <TextBlock FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="CranberyPi Game" />
-                    </Border>
-
-                    <Border Grid.Row="1" Grid.Column="0" BorderBrush="White" BorderThickness="2" VerticalAlignment="Center">
-                        <TextBlock FontFamily="Sans" FontSize="16" TextWrapping="Wrap" Text="Shinny Upatree" />
-                    </Border>
-                    <Border Grid.Row="1" Grid.Column="1" BorderBrush="White" BorderThickness="2">
-                        <TextBlock VerticalAlignment="Center" FontFamily="Sans" FontSize="16">
+                    <TextBlock Margin="2" Grid.Row="0" Grid.Column="0" FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="Elf" />
+                    <TextBlock Margin="2" Grid.Row="0" Grid.Column="1" FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="CranberyPi Game" />
+                    <TextBlock Margin="2" Grid.Row="1" Grid.Column="0" FontFamily="Sans" FontSize="16" TextWrapping="Wrap" Text="Shinny Upatree" />
+                    <TextBlock Margin="2" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontFamily="Sans" FontSize="16">
                         <Hyperlink Command="{Binding Path=NavigateCommand}" CommandParameter="https://docker.kringlecon.com/?challenge=unlinked-function">
                             Sleigh Bell Lottery
                         </Hyperlink>
-                        </TextBlock>
-                    </Border>
+                    </TextBlock>                    
                 </Grid>
             </Border>
-            <TextBlock/>
-            <Expander HorizontalAlignment="Stretch" Background="Black" BorderBrush="{StaticResource AccentBaseColorBrush}" BorderThickness="2"
-          HorizontalContentAlignment="Stretch" Padding="0" Margin="0" Width="Auto" Template="{StaticResource CustomExpanderTemplate}">
+            <Expander Margin="10" Background="{DynamicResource IdealForegroundColorBrush}" HorizontalAlignment="Stretch" BorderBrush="{StaticResource AccentBaseColorBrush}" BorderThickness="1"
+          HorizontalContentAlignment="Stretch" Width="Auto" Template="{StaticResource CustomExpanderTemplate}">
                 <Expander.Header>Catch the Malware</Expander.Header>
                 <StackPanel>
-                    <TextBlock Margin="10,10,10,10">
+                    <TextBlock Margin="10" HorizontalAlignment="Center">
                         <Run FontSize="30" FontWeight="Regular" FontFamily="Sans"  FontStyle="Italic" Text="Difficulty:" />
                         <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
                         <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
@@ -363,7 +352,7 @@
                             </Canvas.RenderTransform>
                         </Canvas>
                         <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
-                        <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                        <Path Width="550" Height="740" Fill="{DynamicResource IdealForegroundDisabledBrush}" StrokeLineJoin="Round">
                             <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
                         </Path>
                             <Canvas.RenderTransform>
@@ -374,7 +363,7 @@
                             </Canvas.RenderTransform>
                         </Canvas>
                         <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
-                        <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                        <Path Width="550" Height="740" Fill="{DynamicResource IdealForegroundDisabledBrush}" StrokeLineJoin="Round">
                             <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
                         </Path>
                             <Canvas.RenderTransform>
@@ -392,11 +381,11 @@
                     <TextBlock Text="Three"/>
                 </StackPanel>
             </Expander>
-            <Expander HorizontalAlignment="Stretch" Background="Black" BorderBrush="{StaticResource AccentBaseColorBrush}" BorderThickness="2"
-          HorizontalContentAlignment="Stretch" Padding="0" Margin="0" Width="Auto" Template="{StaticResource CustomExpanderTemplate}">
+            <Expander Margin="10" HorizontalAlignment="Stretch" Background="{DynamicResource IdealForegroundColorBrush}" BorderBrush="{StaticResource AccentBaseColorBrush}" BorderThickness="1"
+          HorizontalContentAlignment="Stretch" Width="Auto" Template="{StaticResource CustomExpanderTemplate}">
                 <Expander.Header>Identify the Domain</Expander.Header>
                 <StackPanel>
-                    <TextBlock Margin="10,10,10,10">
+                    <TextBlock Margin="10" HorizontalAlignment="Center">
                         <Run FontSize="30" FontWeight="Regular" FontFamily="Sans"  FontStyle="Italic" Text="Difficulty:" />
                         <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
                         <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
@@ -461,11 +450,11 @@
                     <TextBlock Text="Three"/>
                 </StackPanel>
             </Expander>
-            <Expander HorizontalAlignment="Stretch" Background="Black" BorderBrush="{StaticResource AccentBaseColorBrush}" BorderThickness="2"
-          HorizontalContentAlignment="Stretch" Padding="0" Margin="0" Width="Auto" Template="{StaticResource CustomExpanderTemplate}">
+            <Expander Margin="10" HorizontalAlignment="Stretch" Background="{DynamicResource IdealForegroundColorBrush}" BorderBrush="{StaticResource AccentBaseColorBrush}" BorderThickness="1"
+          HorizontalContentAlignment="Stretch" Width="Auto" Template="{StaticResource CustomExpanderTemplate}">
                 <Expander.Header>Stop the Malware</Expander.Header>
                 <StackPanel>
-                    <TextBlock Margin="10,10,10,10">
+                    <TextBlock Margin="10" HorizontalAlignment="Center">
                         <Run FontSize="30" FontWeight="Regular" FontFamily="Sans"  FontStyle="Italic" Text="Difficulty:" />
                         <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
                         <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
@@ -501,7 +490,7 @@
                             </Canvas.RenderTransform>
                         </Canvas>
                         <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
-                        <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                        <Path Width="550" Height="740" Fill="{DynamicResource IdealForegroundDisabledBrush}" StrokeLineJoin="Round">
                             <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
                         </Path>
                             <Canvas.RenderTransform>
@@ -512,7 +501,7 @@
                             </Canvas.RenderTransform>
                         </Canvas>
                         <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
-                        <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                        <Path Width="550" Height="740" Fill="{DynamicResource IdealForegroundDisabledBrush}" StrokeLineJoin="Round">
                             <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
                         </Path>
                             <Canvas.RenderTransform>
@@ -530,11 +519,11 @@
                     <TextBlock Text="Three"/>
                 </StackPanel>
             </Expander>
-            <Expander HorizontalAlignment="Stretch" Background="Black" BorderBrush="{StaticResource AccentBaseColorBrush}" BorderThickness="2"
-          HorizontalContentAlignment="Stretch" Padding="0" Margin="0" Width="Auto" Template="{StaticResource CustomExpanderTemplate}">
+            <Expander Margin="10" HorizontalAlignment="Stretch" Background="{DynamicResource IdealForegroundColorBrush}" BorderBrush="{StaticResource AccentBaseColorBrush}" BorderThickness="1"
+          HorizontalContentAlignment="Stretch" Width="Auto" Template="{StaticResource CustomExpanderTemplate}">
                 <Expander.Header>Recover Alabaster's Password</Expander.Header>
                 <StackPanel>
-                    <TextBlock Margin="10,10,10,10">
+                    <TextBlock Margin="10" HorizontalAlignment="Center">
                         <Run FontSize="30" FontWeight="Regular" FontFamily="Sans"  FontStyle="Italic" Text="Difficulty:" />
                         <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
                         <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">

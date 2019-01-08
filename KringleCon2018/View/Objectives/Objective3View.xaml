@@ -139,7 +139,7 @@
                     </TextBlock>
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                TextWrapping="WrapWithOverflow">
                     <ContentControl Style="{StaticResource panel-default}">
                         <StackPanel>
@@ -304,7 +304,7 @@
                         2 - <iconPacks:PackIconFontAwesome Kind="CircleSolid" VerticalAlignment="Center" HorizontalAlignment="Center" />
                         3 - <iconPacks:PackIconFontAwesome Kind="StarSolid" VerticalAlignment="Center" HorizontalAlignment="Center" />
                         <LineBreak/>
-                        <Button Command="{Binding BruteForceCommand}">Run Brute-Force</Button>
+                        <Button Cursor="Hand" Command="{Binding BruteForceCommand}">Run Brute-Force</Button>
                         <LineBreak/><LineBreak/>                        
                         <Grid>
                             <Grid.ColumnDefinitions>

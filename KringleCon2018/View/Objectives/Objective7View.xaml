@@ -3,15 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:KringleCon2018.Objectives"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Foreground="White"
-             mc:Ignorable="d" Background="Black"
+             mc:Ignorable="d"
              d:DesignHeight="4000" d:DesignWidth="800">
-    <ScrollViewer Name="Scroller" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Stretch" Background="Black">
-        <StackPanel Width="420">
-            <TextBlock Margin="10,10,10,10">
+    <ScrollViewer Name="Scroller" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Stretch">
+        <StackPanel>
+            <TextBlock Margin="10" HorizontalAlignment="Center">
                 <Run FontSize="30" FontWeight="Regular" FontFamily="Sans"  FontStyle="Italic" Text="Difficulty:" />
                 <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
                 <Path Width="550" Height="740" Fill="Red" StrokeLineJoin="Round">
@@ -58,7 +56,7 @@
                     </Canvas.RenderTransform>
                 </Canvas>
                 <Canvas SnapsToDevicePixels="True" UseLayoutRounding="True" Height="30" Width="30">
-                <Path Width="550" Height="740" Fill="White" StrokeLineJoin="Round">
+                <Path Width="550" Height="740" Fill="{DynamicResource IdealForegroundDisabledBrush}" StrokeLineJoin="Round">
                     <Path.Data>M104 195q81 -4 159 12.5t135 54.5l21 -33h-67l70 -100q-41 -13 -85.5 -17.5t-89.5 -1.5t-89.5 13t-84.5 28zM114 383l8 16q50 8 100.5 28.5t96.5 50.5l47 -95h-45l40 -63q-57 -9 -115 -3.5t-113 25.5l25 41h-44zM60 229l61 95q60 -19 125 -24.5t126 4.5l18 -29q-62 -37 -132.5 -53t-141.5 -11l12 18h-68zM17 71l40 57q41 -17 89 -26.5t97 -11t97.5 4.5t91.5 20l31 -44h-172v-71h-102v71h-172zM311 496q-42 -30 -87.5 -51t-93.5 -29l74 152q23 -23 46.5 -36t47.5 -12zM178 706l39 9l19 35l23 -38l42 -6l-29 -31l7 -42l-42 21l-42 -19l19 44zM293 533q-25 4 -45 17t-37 33l29 58z</Path.Data>
                 </Path>
                     <Canvas.RenderTransform>
@@ -71,11 +69,10 @@
             </TextBlock>
             <TextBlock FontFamily="Sans"
                        FontSize="16"
-                       Margin="10,10,10,10"
+                       Margin="10"
                        TextAlignment="Justify"
                        HorizontalAlignment="Left"
-                       TextWrapping="Wrap" 
-                       Width="400">
+                       TextWrapping="Wrap">
                 <Run Text="Santa uses an Elf Resources website to look for talented information security professionals." />
                 <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://careers.kringlecastle.com/">Gain access to the website</Hyperlink>
                 <Run Text="and fetch the document:" />
@@ -84,43 +81,37 @@
                 <Run FontWeight="Bold" FontStyle="Italic" Text="Dev Ops Fail" />
                 <Run FontStyle="Italic" Text="Cranberry Pi terminal challenge." />
             </TextBlock>
-            <Border BorderBrush="White" BorderThickness="2">
-                <Grid>
+            <Border Margin="10"
+                    BorderBrush="{DynamicResource AccentColorBrush}"
+                    BorderThickness="2">
+                <Grid ShowGridLines="True">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="120" />
+                        <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Border Grid.Row="0" Grid.Column="0" BorderBrush="White" BorderThickness="2">
-                        <TextBlock FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="Elf" />
-                    </Border>
-                    <Border Grid.Row="0" Grid.Column="1" BorderBrush="White" BorderThickness="2">
-                        <TextBlock FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="CranberyPi Game" />
-                    </Border>
-
-                    <Border Grid.Row="1" Grid.Column="0" BorderBrush="White" BorderThickness="2" VerticalAlignment="Center">
-                        <TextBlock FontFamily="Sans" FontSize="16" TextWrapping="Wrap" Text="Sparkle Redberry" />
-                    </Border>
-                    <Border Grid.Row="1" Grid.Column="1" BorderBrush="White" BorderThickness="2">
-                        <TextBlock VerticalAlignment="Center" FontFamily="Sans" FontSize="16">
+                    <TextBlock Margin="2" Grid.Row="0" Grid.Column="0" FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="Elf" />
+                    <TextBlock Margin="2" Grid.Row="0" Grid.Column="1" FontFamily="Sans" FontWeight="Bold" FontSize="16" Text="CranberyPi Game" />
+                    <TextBlock Margin="2" Grid.Row="1" Grid.Column="0" FontFamily="Sans" FontSize="16" TextWrapping="Wrap" Text="Sparkle Redberry" />
+                    <TextBlock Margin="2" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontFamily="Sans" FontSize="16">
                         <Hyperlink Command="{Binding Path=NavigateCommand}" CommandParameter="https://docker.kringlecon.com/?challenge=gitpasshist">
                             Dev Ops Fail
                         </Hyperlink>
-                        </TextBlock>
-                    </Border>
+                    </TextBlock>                    
                 </Grid>
             </Border>
-            <Border BorderBrush="White" BorderThickness="2">
+            <Border Margin="10"
+                    BorderBrush="{DynamicResource AccentColorBrush}"
+                    BorderThickness="2">
                 <StackPanel>
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10"
-                               HorizontalAlignment="Left"
-                               TextWrapping="Wrap" 
-                               Width="398">
+                               Margin="10,10,10,0"
+                               HorizontalAlignment="Stretch"
+                               TextWrapping="Wrap">
                         <Run>The Sparkle Redberry terminal opens directly to the shell with instructions to find Sparkle's password in the git repo.</Run>
                         <Run>When looking at the home directory, we have the "runtoanswer" executable, and the "kcconfmgmt" git repo directory.</Run><LineBreak/><LineBreak/>
                         1) <Run>From the shell navigate into the kcconfigmgmt git repo directory (</Run>
@@ -129,58 +120,62 @@
                         <Label Style="{StaticResource kbd}">git log</Label>
                         <Run>to review through the git commits to see if anything stands out or if we can view a few to see if we can pick up on anything.</Run>
                         <Run>The following 2 commits seem interesting from the git repo involving username/password and </Run>
-                    </TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Style="{StaticResource kbd_tb}"><LineBreak/>
-                        commit 60a2ffea7520ee980a5fc60177ff4d0633f2516b<LineBreak/>
-Author: Sparkle Redberry &lt;sredberry@kringlecon.com&gt;<LineBreak/>
-Date:   Thu Nov 8 21:11:03 2018 -0500<LineBreak/>
-Per @tcoalbox admonishment, removed username/password from config.js, default settings in config.js.def need to be updated before use<LineBreak/>
-                    </TextBlock>
-                    <Border BorderBrush="White" BorderThickness="0.4"/>
-                    <TextBlock HorizontalAlignment="Stretch" Style="{StaticResource kbd_tb}"><LineBreak/>
-                        commit d99d465d5b9711d51d7b455584af2b417688c267<LineBreak/>
-Author: Sparkle Redberry &lt;sredberry@kringlecon.com&gt;<LineBreak/>
-Date:   Wed Nov 7 16:57:41 2018 -0500<LineBreak/>
-    Correct typos, runs now! Change port for MongoDB connection<LineBreak/>
+                        <Grid HorizontalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Padding="10" HorizontalAlignment="Stretch" Grid.Row="0" Style="{StaticResource kbd_tb}">
+                                commit 60a2ffea7520ee980a5fc60177ff4d0633f2516b<LineBreak/>
+        Author: Sparkle Redberry &lt;sredberry@kringlecon.com&gt;<LineBreak/>
+        Date:   Thu Nov 8 21:11:03 2018 -0500<LineBreak/>
+        Per @tcoalbox admonishment, removed username/password from config.js, default settings in config.js.def need to be updated before use
+                            </TextBlock>
+                            <Rectangle Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Fill="{StaticResource AccentBaseColorBrush}" Height="1"/>
+                            <TextBlock Padding="10" Grid.Row="2" HorizontalAlignment="Stretch" Style="{StaticResource kbd_tb}">
+                                commit d99d465d5b9711d51d7b455584af2b417688c267<LineBreak/>
+        Author: Sparkle Redberry &lt;sredberry@kringlecon.com&gt;<LineBreak/>
+        Date:   Wed Nov 7 16:57:41 2018 -0500<LineBreak/>
+            Correct typos, runs now! Change port for MongoDB connection
+                            </TextBlock>
+                        </Grid>
                     </TextBlock>
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               TextWrapping="Wrap" 
-                               Width="400">
-                        2) <Run>Below are sections for the details of the 2 commits above.  You can see that in both commits, the username and password for the mongodb are exposed in git commit history.</Run><LineBreak/><LineBreak/>
-                        <Run>COMMIT 60a2ffea7520ee980a5fc60177ff4d0633f2516b</Run><LineBreak/>
-                    </TextBlock>                    
-                    <Image Source="{Binding GitCommit1}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
-                    <TextBlock FontFamily="Sans"
-                               FontSize="16"
-                               Margin="10,10,10,10"
-                               HorizontalAlignment="Left"
-                               TextWrapping="Wrap" 
-                               Width="400">
-                        <LineBreak/>
-                        <Run>COMMIT d99d465d5b9711d51d7b455584af2b417688c267</Run><LineBreak/>
+                               TextWrapping="Wrap">
+                        2) <Run>Below are sections for the details of the 2 commits above.  You can see that in both commits, the username and password for the mongodb are exposed in git commit history.</Run>
+                        <Run>COMMIT 60a2ffea7520ee980a5fc60177ff4d0633f2516b</Run>
                     </TextBlock>
-                    <Image Source="{Binding GitCommit2}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
+                    <Image Source="{Binding GitCommit1}" HorizontalAlignment="Left" Margin="10" Stretch="Fill" />
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               TextWrapping="Wrap" 
-                               Width="400">
+                               TextWrapping="Wrap">                        
+                        <Run>COMMIT d99d465d5b9711d51d7b455584af2b417688c267</Run>
+                    </TextBlock>
+                    <Image Source="{Binding GitCommit2}" HorizontalAlignment="Left" Margin="10" Stretch="Fill" />
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap">
                         <Run FontWeight="Bold">Answer:</Run> twinkletwinkletwinkle
                     </TextBlock>
                 </StackPanel>
             </Border>
-            <Border BorderBrush="White" BorderThickness="2">
+            <Border Margin="10"
+                    BorderBrush="{DynamicResource AccentColorBrush}"
+                    BorderThickness="2">
                 <StackPanel>
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               TextWrapping="Wrap" 
-                               Width="400">
+                               TextWrapping="Wrap">
                         1) <Run>For the objective challenge, we need to Open up the browser to https://careers.kringlecastle.com/.</Run>
                         <Run>At this site, we need to find the document "C:\candidate_evaluation.docx" to find the job applicate whose name beings with "K".</Run><LineBreak/><LineBreak/>
                         2) <Run>Looking through the source code, you can see that there some directory structures through the site we can look at.</Run><LineBreak/>
@@ -189,65 +184,66 @@ Date:   Wed Nov 7 16:57:41 2018 -0500<LineBreak/>
                         <Run>If we navigate to one of these directories, we are presented with an error message that gives us further information.</Run><LineBreak/>
                         <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://careers.kringlecastle.com/static/">404 Error Page</Hyperlink><LineBreak/>
                         <Run>On this page we are give 2 pieces of information:</Run>
-                    </TextBlock>
-                    <TextBlock HorizontalAlignment="Stretch" Style="{StaticResource kbd_tb}">
-                        Publicly accessible file served from: <LineBreak/>
-                        C:\careerportal\resources\public\ not found......
-                    </TextBlock>
-                    <TextBlock HorizontalAlignment="Stretch" Style="{StaticResource kbd_tb}">
-                        Try: <LineBreak/>
-                        https://careers.kringlecastle.com/public/'file name you are looking for'
+                        <LineBreak/><LineBreak/>
+                        <TextBlock HorizontalAlignment="Stretch" Style="{StaticResource kbd_tb}">
+                            Publicly accessible file served from: <LineBreak/>
+                            C:\careerportal\resources\public\ not found......
+                        </TextBlock>
+                        <LineBreak/><LineBreak/>
+                        <TextBlock HorizontalAlignment="Stretch" Style="{StaticResource kbd_tb}">
+                            Try: <LineBreak/>
+                            https://careers.kringlecastle.com/public/'file name you are looking for'
+                        </TextBlock>
                     </TextBlock>
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               TextWrapping="Wrap" 
-                               Width="400">
+                               TextWrapping="Wrap">
                         3) <Run>We know that we are looking to grab the file "C:\candidate_evaluation.docx", and that files are publically served from "C:\careerportal\resources\public\".</Run><LineBreak/><LineBreak/>
                         <Run>We need to move the file from candidate_evaluation.docx from the C:\ drive to the public location, so that we can publically access the file from the URL.</Run><LineBreak/><LineBreak/>
                         <Run>From the home page, there is a form that accepts a CSV file.  We will try a CSV injection (CSVi) to try to move the document to the publically accesssed location on the server.</Run><LineBreak/><LineBreak/>
                         <Run>Construct a CSV file that moves the "C:\candidate_evaluation.docx" to "C:\careerportal\resources\public\".</Run><LineBreak/><LineBreak/>
                         <Run>Try the following CSVi locally to make sure it is working properly.  You can simply construct the CSVi and open it with Excel to cause the vulnerability.</Run>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <TextBlock>CSVi_local.csv:</TextBlock><LineBreak/>
+                        <TextBlock HorizontalAlignment="Stretch" Style="{StaticResource kbd_tb}">=cmd|'/c copy C:\candidate_evaluation.docx C:\careerportal\resources\public\'!A</TextBlock>
                     </TextBlock>
-                    <TextBlock>CSVi_local.csv:</TextBlock>
-                    <TextBlock HorizontalAlignment="Stretch" Style="{StaticResource kbd_tb}">=cmd|'/c copy C:\candidate_evaluation.docx C:\careerportal\resources\public\'!A</TextBlock>
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               TextWrapping="Wrap" 
-                               Width="400">
+                               TextWrapping="Wrap">
                         <Run>This worked on my local machine, but would not work right when uploading it to the server.  The injection opens the command prompt (cmd) and runs the command copy to move the file to the public folder.</Run>
                     </TextBlock>
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               TextWrapping="Wrap" 
-                               Width="400">
+                               TextWrapping="Wrap">
                         3) <Run>I made modifications to the CSVi to obfuscate it from the server, and retried.</Run>
                         <Run>I used the following new CSVi file:</Run>
-                    </TextBlock>
-                    <TextBlock>CSVi_remote.csv:</TextBlock>
-                    <TextBlock HorizontalAlignment="Stretch" Style="{StaticResource kbd_tb}">=CmD|'/c   cOpy C:\candidate_evaluation.docx C:\careerportal\resources\public\'!A6</TextBlock>
+                        <LineBreak/><LineBreak/>
+                        <TextBlock>CSVi_remote.csv:</TextBlock>
+                        <LineBreak/>
+                        <TextBlock HorizontalAlignment="Stretch" Style="{StaticResource kbd_tb}">=CmD|'/c   cOpy C:\candidate_evaluation.docx C:\careerportal\resources\public\'!A6</TextBlock>
+                    </TextBlock>                   
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               TextWrapping="Wrap" 
-                               Width="400">
+                               TextWrapping="Wrap">
                         4) <Run>After uploading the CSVi_remote.csv to the server, you can now navigate and gain access to the candidate_evaluation.docx file by going to the following URL path:</Run>
                         <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://careers.kringlecastle.com/public/candidate_evaluation.docx">https://careers.kringlecastle.com/public/candidate_evaluation.docx</Hyperlink><LineBreak/><LineBreak/>
                         5) <Run>You now have access to the file.</Run>
                     </TextBlock>
-                    <Button Command="{Binding DownloadFileCommand}" CommandParameter="{Binding DocxDownload}">Download: candidate_evaluation.docx</Button>
+                    <Button Cursor="Hand" Command="{Binding DownloadFileCommand}" CommandParameter="{Binding DocxDownload}">Download: candidate_evaluation.docx</Button>
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               TextWrapping="Wrap" 
-                               Width="400">
+                               TextWrapping="Wrap">
                         Now can now answer the objective by reviewing the document.  I have included the pages that show that Krampus is the candidate who supported the terrorist organization "Fancy Beaver".
                     </TextBlock>
                     <Image Source="{Binding Krampus1}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
@@ -256,9 +252,8 @@ Date:   Wed Nov 7 16:57:41 2018 -0500<LineBreak/>
             </Border>
             <TextBlock FontFamily="Sans"
                                FontSize="16"
-                               Margin="10,10,10,10"
+                               Margin="10"
                                HorizontalAlignment="Left"
-                               Width="400"
                                TextWrapping="Wrap">
                         <Run FontWeight="Bold" Text="Answer" />: Fancy Beaver
             </TextBlock>
