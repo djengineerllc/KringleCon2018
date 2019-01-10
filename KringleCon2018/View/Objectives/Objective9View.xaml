@@ -31,15 +31,15 @@
                                 <Setter Property="Control.Template">
                                     <Setter.Value>
                                         <ControlTemplate TargetType="ToggleButton">
-                                            <Border Padding="{TemplateBinding Control.Padding}">
+                                            <Border CornerRadius="3" Background="{StaticResource HeaderBackground}" BorderBrush="Green" BorderThickness="2" Padding="{TemplateBinding Control.Padding}">
                                                 <Grid Background="{StaticResource HeaderBackground}" SnapsToDevicePixels="False">
                                                     <Grid.ColumnDefinitions>
                                                         <ColumnDefinition Width="19" />
                                                         <ColumnDefinition Width="*" />
                                                     </Grid.ColumnDefinitions>
-                                                    <Ellipse Height="19" HorizontalAlignment="Center" Name="circle" Stroke="DarkGray" VerticalAlignment="Center" Width="19" />
-                                                    <Path Data="M1,1.5L4.5,5 8,1.5" HorizontalAlignment="Center" Name="arrow" SnapsToDevicePixels="False" Stroke="#FF666666" StrokeThickness="2" VerticalAlignment="Center" />
-                                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Grid.Column="1" HorizontalAlignment="Left" Margin="4,0,0,0" RecognizesAccessKey="True" SnapsToDevicePixels="True" VerticalAlignment="Center" />
+                                                    <Ellipse Height="19" HorizontalAlignment="Center" Name="circle" Stroke="{DynamicResource IdealForegroundColorBrush}" VerticalAlignment="Center" Width="19" />
+                                                    <Path Data="M1,1.5L4.5,5 8,1.5" HorizontalAlignment="Center" Name="arrow" SnapsToDevicePixels="False" Stroke="{DynamicResource IdealForegroundColorBrush}" StrokeThickness="2" VerticalAlignment="Center" />
+                                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Grid.Column="1" HorizontalAlignment="Left" Margin="10" RecognizesAccessKey="True" SnapsToDevicePixels="True" VerticalAlignment="Center" />
                                                 </Grid>
                                             </Border>
                                             <ControlTemplate.Triggers>

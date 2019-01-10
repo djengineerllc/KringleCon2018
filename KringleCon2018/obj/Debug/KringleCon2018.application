@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="KringleCon2018.exe.manifest" size="19288">
+    <dependentAssembly dependencyType="install" codebase="KringleCon2018.exe.manifest" size="22820">
       <assemblyIdentity name="KringleCon2018.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>q+weqRpPUhoqkWJWJCOA71Zp+MuXSUI1cGcQ1cNRWUE=</dsig:DigestValue>
+        <dsig:DigestValue>cIisAV82h+UtWx1Q5vK7cXUZlDmp/fpo07+y7eKnvB0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

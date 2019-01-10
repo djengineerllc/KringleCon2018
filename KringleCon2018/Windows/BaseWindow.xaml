@@ -9,6 +9,15 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResizeWithGrip"
         GlowBrush="{DynamicResource AccentColorBrush}">
+    <Controls:MetroWindow.LeftWindowCommands>
+        <Controls:WindowCommands>
+            <Rectangle Height="20" Width="20" Fill="{Binding RelativeSource={RelativeSource AncestorType=Controls:WindowCommands}, Path=Foreground}">
+                <Rectangle.OpacityMask>
+                    <VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_candy_cane}" />
+                </Rectangle.OpacityMask>
+            </Rectangle>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.LeftWindowCommands>
     <Controls:MetroWindow.Title>
         <PriorityBinding>
             <Binding Path="ActiveItem.DisplayName"></Binding>

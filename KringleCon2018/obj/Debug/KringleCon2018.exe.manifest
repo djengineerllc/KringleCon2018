@@ -163,14 +163,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KringleCon2018.exe" size="5806048">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KringleCon2018.exe" size="5835744">
       <assemblyIdentity name="KringleCon2018" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BmYHxJIlifpyIgzhJph/dmGDjmrj5Ro0fwVg2gXRQeM=</dsig:DigestValue>
+        <dsig:DigestValue>WFqVqEfmw1sGmTqPyWukDt1QajbeEoQFGhdqFWy8n1o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -231,6 +231,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>5PybQHBnAzNUw+vk4Qhupch4aEzMJjWJkTBxF078v3o=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NAudio.dll" size="507904">
+      <assemblyIdentity name="NAudio" version="1.8.5.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>kiVMtUu92HX2lQwq+/4XwAG799zNQ9Q+r9t9m/7DWv4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -346,6 +358,69 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>o12ox8ZmQHaCMryNvOGjWBxGGHRN97QqoGYyHMWD0zk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Songs\Brandenburgh #3.mp3" size="11239832">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xoPH+B4KT0DhfdMDLZO0b60D2nSAZ7xYy7bMm6zL7Sw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Songs\Christmas in Hollis.mp3" size="6777125">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>36rbGTlKFGjA+cS+4/y+bX2Lt8IUo4kpsyQuU+1HE7c=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Songs\Dreidel.mp3" size="11350643">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>NrD/UET6xOBfsEoYMiRsLYcV6Mq4Mc1YhbFNQ0x4ar4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Songs\Jingle Bells.mp3" size="5637111">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>yIvPfhRdnNrNth2cDpIGuS0UnaMcnkDubbiAhbWNqmc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Songs\Let it Snow.mp3" size="11529321">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>LlUsUn5ZhBFQWLGYNzfzEnlGswzMnQGWp5FvC5FOU9w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Songs\Ode to Joy.mp3" size="9270251">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>XMrFK0O+e/DofhAASAHKP78Da3B8+ppyfZDSm9mD6TA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Songs\Winter Wonderland.mp3" size="7963084">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>tvbk0Me9IliWKdOw6u82lvtm3WKDpP0zb4s7gUa02/E=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
