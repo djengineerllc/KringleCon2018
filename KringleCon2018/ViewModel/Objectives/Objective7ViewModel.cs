@@ -5,7 +5,7 @@ namespace KringleCon2018.Objectives
 {
     public class Objective7ViewModel : ObjectiveViewModel
     {
-        private string _gitCommit1, _gitCommit2, _docxDownload, _krampus1, _krampus2;
+        private string _gitCommit1, _gitCommit2, _docxDownload, _krampus1, _krampus2, _sparkleRedberry;
         public Objective7ViewModel()
         {
             GitCommit1 = @"../../Resources/Objectives/Objective7/Commit60a2ffea7520ee980a5fc60177ff4d0633f2516b.png";
@@ -13,6 +13,7 @@ namespace KringleCon2018.Objectives
             DocxDownload = Path.Combine(Environment.CurrentDirectory, @"Resources\Objectives\Objective7\candidate_evaluation.docx");
             Krampus1 = @"../../Resources/Objectives/Objective7/Krampus1.png";
             Krampus2 = @"../../Resources/Objectives/Objective7/Krampus2.png";
+            SparkleRedberry = @"../../Resources/Objectives/Objective7/SparkleRedberry.png";
         }
     public string GitCommit1
         {
@@ -38,6 +39,11 @@ namespace KringleCon2018.Objectives
         {
             get => _krampus2;
             set => SetProperty(ref _krampus2, value);
+        }
+        public string SparkleRedberry
+        {
+            get => _sparkleRedberry;
+            set => SetProperty(ref _sparkleRedberry, value);
         }
     }
 }

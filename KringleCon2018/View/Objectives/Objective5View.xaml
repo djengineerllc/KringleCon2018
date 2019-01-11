@@ -159,6 +159,7 @@
                         <TextBlock Style="{StaticResource kbd_tb}"># love using the new stuff! -Bushy</TextBlock><LineBreak/>
                         <TextBlock Style="{StaticResource kbd_tb}">listen                  8080 http2;</TextBlock>
                     </TextBlock>
+                    <Image Source="{Binding HollyEvergreen}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
                                Margin="10"

@@ -17,7 +17,7 @@ namespace KringleCon2018.Objectives
     }
     public class Objective3ViewModel : ObjectiveViewModel
     {
-        private string _poem, _poemOriginal, _doorMessage;
+        private string _poem, _poemOriginal, _doorMessage, _tangleCoalbox;
         private PackIconFontAwesome _shape1, _shape2, _shape3, _shape4;
         private PackIconFontAwesome _triangle = new PackIconFontAwesome {
             Kind = PackIconFontAwesomeKind.PlaySolid,
@@ -47,6 +47,7 @@ namespace KringleCon2018.Objectives
         {
             Poem = File.ReadAllText("../../Resources/Objectives/Objective3/poem.txt");
             PoemOriginal = File.ReadAllText("../../Resources/Objectives/Objective3/poem_original.txt");
+            TangleCoalbox = @"../../Resources/Objectives/Objective3/TangleCoalbox.png";
             Shape1 = CopyIcon(_triangle);
             Shape2 = CopyIcon(_triangle);
             Shape3 = CopyIcon(_triangle);
@@ -86,6 +87,11 @@ namespace KringleCon2018.Objectives
         {
             get => _doorMessage;
             set => SetProperty(ref _doorMessage, $"Finished - {value}");
+        }
+        public string TangleCoalbox
+        {
+            get => _tangleCoalbox;
+            set => SetProperty(ref _tangleCoalbox, value);
         }
         private PackIconFontAwesome CopyIcon(PackIconFontAwesome icon) => new PackIconFontAwesome
         {

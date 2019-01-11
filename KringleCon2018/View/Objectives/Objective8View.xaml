@@ -148,6 +148,7 @@
                         <Label Style="{StaticResource kbd}">eval('os.sy'+'stem("./i_escaped")')</Label><LineBreak/><LineBreak/>
                         <Run>That's it, we escaped and sent the lizard packing!</Run>
                     </TextBlock>
+                    <Image Source="{Binding AlabasterSnowball}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
                                Margin="10"
@@ -206,7 +207,7 @@
                         <Run>This tells us that files from the server are being opened when displaying pages.  Maybe we can use this to open app.js file from the server?</Run><LineBreak/><LineBreak/>
                         4) <Run>Since we know that files are being opened from the pub directory, try accessing the app.js file from the pub directory instead.</Run>
                         <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://packalyzer.kringlecastle.com/pub/app.js">https://packalyzer.kringlecastle.com/pub/app.js</Hyperlink><LineBreak/><LineBreak/>
-                        <Run>This time we have access to the server file and we can now see it's contents.</Run>
+                        <Run>This time we have access to the server file and we can now see it's contents.</Run><LineBreak/>
                         <ContentControl Style="{StaticResource panel-default}">
                             <StackPanel>
                                 <ContentControl Style="{StaticResource panel-heading-default}" Content="app.js"/>

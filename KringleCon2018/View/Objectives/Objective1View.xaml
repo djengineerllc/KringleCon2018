@@ -110,8 +110,14 @@
                                Margin="10"
                                HorizontalAlignment="Left"
                                TextWrapping="WrapWithOverflow">
-                        To escape the vi terminal, type the following keys: <Label Style="{StaticResource kbd}">:q!</Label> and then press enter.
-                        <LineBreak/>
+                        To escape the vi terminal, type the following keys: <Label Style="{StaticResource kbd}">:q!</Label> and then press enter.<LineBreak/>
+                    </TextBlock>
+                    <Image Source="{Binding BushEvergreen}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="WrapWithOverflow">
                         <Run Text="Next head over to the KringleCon Holiday Hack History Kiosk, and answer all the questions." />
                     </TextBlock>
                 </StackPanel>

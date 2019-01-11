@@ -2,7 +2,7 @@
 {
     public class Objective6ViewModel : ObjectiveViewModel
     {
-        private string _alabasterBadge, _qrCode1, _qrCode2, _qrCode3, _finalQRBadge;
+        private string _alabasterBadge, _qrCode1, _qrCode2, _qrCode3, _finalQRBadge, _pepperMinstix;
         public Objective6ViewModel()
         {
             AlabasterBadge = @"../../Resources/Objectives/Objective6/alabaster_badge.jpg";
@@ -10,6 +10,7 @@
             QRCode2 = @"../../Resources/Objectives/Objective6/QRCode2.png";
             QRCode3 = @"../../Resources/Objectives/Objective6/QRCode3.png";
             FinalQRBadge = @"../../Resources/Objectives/Objective6/FinalQRBadge.png";
+            PepperMinstix = @"../../Resources/Objectives/Objective6/PepperMinstix.png";
         }
         public string AlabasterBadge
         {
@@ -35,6 +36,11 @@
         {
             get => _finalQRBadge;
             set => SetProperty(ref _finalQRBadge, value);
+        }
+        public string PepperMinstix
+        {
+            get => _pepperMinstix;
+            set => SetProperty(ref _pepperMinstix, value);
         }
     }
 }

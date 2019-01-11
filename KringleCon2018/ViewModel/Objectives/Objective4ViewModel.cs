@@ -5,7 +5,7 @@ namespace KringleCon2018.Objectives
 {
     public class Objective4ViewModel : ObjectiveViewModel
     {
-        private string _report, _truffleHog, _zipFilePath, _ventImg1, _ventImg2;
+        private string _report, _truffleHog, _zipFilePath, _ventImg1, _ventImg2, _wunorseOpenslae;
         public Objective4ViewModel()
         {
             Report = File.ReadAllText("../../Resources/Objectives/Objective4/report.txt");
@@ -13,6 +13,7 @@ namespace KringleCon2018.Objectives
             ZipFilePath = Path.Combine(Environment.CurrentDirectory, @"Resources\Objectives\Objective4\schematics_ventilation_diagram.zip");
             VentImg1 = @"../../Resources/Objectives/Objective4/ventilation_diagram_1F.jpg";
             VentImg2 = @"../../Resources/Objectives/Objective4/ventilation_diagram_2F.jpg";
+            WunorseOpenslae = @"../../Resources/Objectives/Objective4/WunorseOpenslae.png";
         }
         public string Report
         {
@@ -38,6 +39,11 @@ namespace KringleCon2018.Objectives
         {
             get => _ventImg2;
             set => SetProperty(ref _ventImg2, value);
+        }
+        public string WunorseOpenslae
+        {
+            get => _wunorseOpenslae;
+            set => SetProperty(ref _wunorseOpenslae, value);
         }
     }
 }

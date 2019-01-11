@@ -176,6 +176,7 @@
                             </StackPanel>
                         </ContentControl>
                     </TextBlock>
+                    <Image Source="{Binding WunorseOpenslae}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
                                Margin="10"

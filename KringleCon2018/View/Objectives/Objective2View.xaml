@@ -203,6 +203,7 @@
                                TextWrapping="WrapWithOverflow">
                         8) Run <Label Style="{StaticResource kbd}">.exit</Label> to exit the sqlite prompt.  Run the command <Label Style="{StaticResource kbd}">./runtoanswer</Label> and answer the question.
                     </TextBlock>
+                    <Image Source="{Binding MintyCandycane}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
                                Margin="10,10,10,10"

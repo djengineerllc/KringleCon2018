@@ -194,6 +194,7 @@
                                TextWrapping="Wrap">
                         The command will produce the following result and will contain the answer.
                     </TextBlock>
+                    <Image Source="{Binding PepperMinstix}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
                                TextWrapping="Wrap"
@@ -227,7 +228,7 @@
                                        Margin="10"
                                        HorizontalAlignment="Left"
                                        TextWrapping="Wrap">
-                        1) <Run>In this challenge, I will be using the following site to generate QR Codes to try and perform a SQL injection (SQLi) with the data stored on a QR code:</Run> <Hyperlink Command="{Binding Navigate Command}" CommandParameter="https://www.the-qrcode-generator.com/">QR Code Generator</Hyperlink>.
+                        1) <Run>In this challenge, I will be using the following site to generate QR Codes to try and perform a SQL injection (SQLi) with the data stored on a QR code:</Run> <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://www.the-qrcode-generator.com/">QR Code Generator</Hyperlink>.
                         <Run>The first command is to generate an error to learn information off of the error message.</Run><LineBreak/><LineBreak/>
                         <Run>Use the following site for uploading your QR Codes to: </Run>
                         <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://scanomatic.kringlecastle.com/index.html?challenge=qrcode&amp;id=6607b7cf-98c0-4414-aa35-6276845d420b">Scan-O-Matic</Hyperlink><LineBreak/><LineBreak/>

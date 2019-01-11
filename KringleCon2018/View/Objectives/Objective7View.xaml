@@ -158,6 +158,7 @@
                         <Run>COMMIT d99d465d5b9711d51d7b455584af2b417688c267</Run>
                     </TextBlock>
                     <Image Source="{Binding GitCommit2}" HorizontalAlignment="Left" Margin="10" Stretch="Fill" />
+                    <Image Source="{Binding SparkleRedberry}" HorizontalAlignment="Left" Margin="0" Stretch="Fill" />
                     <TextBlock FontFamily="Sans"
                                FontSize="16"
                                Margin="10"

@@ -399,22 +399,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Objectives\Objective10\" />
-    <Folder Include="Resources\Objectives\Objective9\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Objectives\Objective1\KringleConKiosk.PNG" />
-    <Resource Include="Resources\Objectives\Objective2\ScottChanNameTag.png" />
+    <Resource Include="Resources\Objectives\Objective2\MintyCandycane.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Objectives\Objective3\poem.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Objectives\Objective3\LethalForensicELFication.png" />
+    <Resource Include="Resources\Objectives\Objective3\TangleCoalbox.png" />
     <Resource Include="Resources\Objectives\Objective3\poem_original.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Objectives\Objective4\report.txt" />
-    <Resource Include="Resources\Objectives\Objective4\StallMuckingReport.png" />
+    <Resource Include="Resources\Objectives\Objective4\WunorseOpenslae.png" />
     <Resource Include="Resources\Objectives\Objective4\truffleHogResults.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -422,7 +421,7 @@
     <Resource Include="Resources\Objectives\Objective4\ventilation_diagram_2F.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Objectives\Objective5\CURLingMaster.png" />
+    <Resource Include="Resources\Objectives\Objective5\HollyEvergreen.png" />
     <Resource Include="Resources\Objectives\Objective5\KerberoastableToDomainAdmins.png" />
     <Resource Include="Resources\Objectives\Objective5\SlingShot.png" />
   </ItemGroup>
@@ -430,6 +429,10 @@
     <Resource Include="Resources\Objectives\Objective5\PATH_KerberoastableToDomainAdmins.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Objectives\Objective9\nm_sleighbell-lotto.txt" />
+    <Resource Include="Resources\Objectives\Objective9\ShinyUpatree.png" />
+    <Resource Include="Resources\Objectives\Objective1\BushEvergreen.png" />
+    <Resource Include="Resources\Objectives\Objective7\SparkleRedberry.png" />
     <Content Include="Resources\Songs\Brandenburgh #3.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -469,7 +472,7 @@
     </None>
     <Resource Include="Resources\Objectives\Objective8\SecretEmailFromTCPStream.txt" />
     <Resource Include="Resources\Objectives\Objective8\Python-ImportOS.png" />
-    <Resource Include="Resources\Objectives\Objective8\PythonEscapeFromLA.png" />
+    <Resource Include="Resources\Objectives\Objective8\AlabasterSnowball.png" />
     <Resource Include="Resources\Objectives\Objective8\Python-CheckCommandAccess.png" />
     <Resource Include="Resources\Objectives\Objective7\Krampus1.png" />
     <Resource Include="Resources\Objectives\Objective7\Krampus2.png" />
@@ -481,7 +484,7 @@
     <Resource Include="Resources\Objectives\Objective6\QRCode2.png" />
     <Resource Include="Resources\Objectives\Objective6\alabaster_badge.jpg" />
     <Content Include="Resources\Objectives\Objective6\evtx_dump.py" />
-    <Resource Include="Resources\Objectives\Objective6\YuleLogAnalysis.png" />
+    <Resource Include="Resources\Objectives\Objective6\PepperMinstix.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

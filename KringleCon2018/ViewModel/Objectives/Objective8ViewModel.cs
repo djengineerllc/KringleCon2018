@@ -5,7 +5,7 @@ namespace KringleCon2018.Objectives
 {
     public class Objective8ViewModel : ObjectiveViewModel
     {
-        private string _pythonCommandCheck, _pythonImportOS, _appJS, _pcapP1, _pcapP2, _sslLog1, _sslLog2;
+        private string _pythonCommandCheck, _pythonImportOS, _appJS, _pcapP1, _pcapP2, _sslLog1, _sslLog2, _alabasterSnowball;
         private string _loginHTML, _indexHTML, _secretPCAP, _secretEmail, _emailAttachment;
         public Objective8ViewModel()
         {
@@ -21,6 +21,12 @@ namespace KringleCon2018.Objectives
             SecretPCAP = Path.Combine(Environment.CurrentDirectory, @"Resources\Objectives\Objective8\ALABASTER_super_secret_packet_capture.pcap");
             SecretEmail = File.ReadAllText(@"../../Resources/Objectives/Objective8/SecretEmailFromTCPStream.txt");
             EmailAttachment = Path.Combine(Environment.CurrentDirectory, @"Resources\Objectives\Objective8\mailattachment.pdf");
+            AlabasterSnowball = @"../../Resources/Objectives/Objective8/AlabasterSnowball.png";
+        }
+        public string AlabasterSnowball
+        {
+            get => _alabasterSnowball;
+            set => SetProperty(ref _alabasterSnowball, value);
         }
         public string PythonCommandCheck
         {

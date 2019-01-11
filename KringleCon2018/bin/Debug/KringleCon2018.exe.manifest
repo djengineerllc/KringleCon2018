@@ -163,14 +163,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KringleCon2018.exe" size="5835744">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KringleCon2018.exe" size="5884896">
       <assemblyIdentity name="KringleCon2018" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WFqVqEfmw1sGmTqPyWukDt1QajbeEoQFGhdqFWy8n1o=</dsig:DigestValue>
+        <dsig:DigestValue>vpWzaeZmbGelq+edyZ3gCj6fgG6yDBa6b+Fj0BouzJc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
