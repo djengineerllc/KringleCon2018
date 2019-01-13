@@ -71,13 +71,17 @@
     <ManifestKeyFile>KringleCon2018_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
-    <NoWin32Manifest>true</NoWin32Manifest>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
@@ -339,6 +343,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="KringleCon2018_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -368,6 +373,26 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Resources\Objectives\Objective8\pepperLogin.json" />
+    <None Include="Resources\Objectives\Objective9\CatchTheMalware\snort.log.1547255048.4356453.pcap">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Objectives\Objective9\CatchTheMalware\snort.log.1547255095.3225539.pcap">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Objectives\Objective9\CatchTheMalware\snort.log.1547255127.5287354.pcap">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Objectives\Objective9\CatchTheMalware\snort.log.1547255167.4590678.pcap">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Objectives\Objective9\CatchTheMalware\snort.log.1547255214.5929677.pcap">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Objectives\Objective9\CatchTheMalware\snort.log.1547255248.2398825.pcap">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Objectives\Objective9\IdentifyTheDomain\CHOCOLATE_CHIP_COOKIE_RECIPE.docm" />
+    <None Include="Resources\Objectives\Objective9\IdentifyTheDomain\CHOCOLATE_CHIP_COOKIE_RECIPE.zip" />
     <Resource Include="Resources\KGChristmasTrees.ttf" />
     <Resource Include="Resources\PWChristmasTinsel.ttf" />
     <Resource Include="Resources\KerstKaarten.ttf" />
@@ -399,6 +424,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Objectives\Objective10\" />
+    <Folder Include="Resources\Objectives\Objective9\RecoverAlabastersPassword\" />
+    <Folder Include="Resources\Objectives\Objective9\StopTheMalware\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Objectives\Objective1\KringleConKiosk.PNG" />
@@ -433,6 +460,13 @@
     <Resource Include="Resources\Objectives\Objective9\ShinyUpatree.png" />
     <Resource Include="Resources\Objectives\Objective1\BushEvergreen.png" />
     <Resource Include="Resources\Objectives\Objective7\SparkleRedberry.png" />
+    <Resource Include="Resources\Objectives\Objective9\CatchTheMalware\more_info.txt" />
+    <Resource Include="Resources\Objectives\Objective9\CatchTheMalware\pcap_signature_samples.txt" />
+    <Resource Include="Resources\Objectives\Objective9\CatchTheMalware\SnortRunResults.txt" />
+    <Resource Include="Resources\Objectives\Objective9\CatchTheMalware\SnortIDS.png" />
+    <Resource Include="Resources\Elf-AlabasterSnowball.png" />
+    <Resource Include="Resources\santa.png" />
+    <Resource Include="Resources\Objectives\Objective9\CatchTheMalware\SnortAlerts.txt" />
     <Content Include="Resources\Songs\Brandenburgh #3.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

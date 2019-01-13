@@ -6,7 +6,7 @@
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d"
-             d:DesignHeight="1800" d:DesignWidth="800">
+             d:DesignHeight="3600" d:DesignWidth="800">
     <UserControl.Resources>
         <SolidColorBrush x:Key="HeaderBackground" Color="{StaticResource Primary700}"/>
         <ControlTemplate x:Key="CustomExpanderTemplate" TargetType="Expander">
@@ -452,10 +452,153 @@
                                TextWrapping="Wrap">
                         <Run>Assist Alabaster by building a Snort filter to identify the malware plaguing Santa's Castle.</Run>
                     </TextBlock>
-                    <TextBlock Text="Three"/>
-                    <TextBlock Text="One"/>
-                    <TextBlock Text="Two"/>
-                    <TextBlock Text="Three"/>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               TextAlignment="Left"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap">
+                        1) <Run>Open the "Snort Challenge" laptop near "Alabaster Snowball".  You will be logged into the terminal.</Run>
+                        <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://docker.kringlecon.com/?challenge=snort">KingleCastle Snort IDS Sensor 1</Hyperlink>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run>In this terminal, you must create a snort rule that matches ONLY bad DNS traffic and NOT legitimate user traffic and the system will notify of your success.</Run>
+                        <Run>Here is a text file that is given in the home directory with additional information:</Run>
+                        <LineBreak/>
+                        <ContentControl Style="{StaticResource panel-default}">
+                            <StackPanel>
+                                <ContentControl Style="{StaticResource panel-heading-default}" Content="more_info.txt"/>
+                                <ContentControl Style="{StaticResource panel-body}">
+                                    <ContentControl.Content>
+                                        <TextBox
+                                            Height="200"
+                                            Width="350"
+                                            Background="Black"
+                                            Foreground="White"
+                                            TextWrapping="NoWrap"
+                                            AcceptsReturn="True"
+                                            HorizontalScrollBarVisibility="Auto"
+                                            VerticalScrollBarVisibility="Auto"
+                                            Text="{Binding MoreInfo}" />
+                                    </ContentControl.Content>
+                                </ContentControl>
+                            </StackPanel>
+                        </ContentControl>
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               TextAlignment="Left"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap">
+                        <Run>From the file above you can find pcap files to analyze at:</Run> <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="http://snortsensor1.kringlecastle.com/">http://snortsensor1.kringlecastle.com/</Hyperlink>
+                        <LineBreak/><LineBreak/>
+                        2) <Run>Log into the sensor with the credentials given in the text document.  Use this site to download 6 PCAP files to analyze and coming up with your snort rule.</Run>
+                        <LineBreak/>
+                    </TextBlock>
+                    <Button Cursor="Hand" Command="{Binding DownloadFileCommand}" CommandParameter="{Binding PCAP1}">Download: snort.log.1547255048.4356453.pcap</Button>
+                    <Button Cursor="Hand" Command="{Binding DownloadFileCommand}" CommandParameter="{Binding PCAP2}">Download: snort.log.1547255095.3225539.pcap</Button>
+                    <Button Cursor="Hand" Command="{Binding DownloadFileCommand}" CommandParameter="{Binding PCAP3}">Download: snort.log.1547255127.5287354.pcap</Button>
+                    <Button Cursor="Hand" Command="{Binding DownloadFileCommand}" CommandParameter="{Binding PCAP4}">Download: snort.log.1547255167.4590678.pcap</Button>
+                    <Button Cursor="Hand" Command="{Binding DownloadFileCommand}" CommandParameter="{Binding PCAP5}">Download: snort.log.1547255214.5929677.pcap</Button>
+                    <Button Cursor="Hand" Command="{Binding DownloadFileCommand}" CommandParameter="{Binding PCAP6}">Download: snort.log.1547255248.2398825.pcap</Button>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               TextAlignment="Left"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap">
+                        <Run>After analyzing the PCAP files with Wireshark, I copied all of the line items that were suspect into the following file:</Run>
+                        <LineBreak/>
+                        <ContentControl Style="{StaticResource panel-default}">
+                            <StackPanel>
+                                <ContentControl Style="{StaticResource panel-heading-default}" Content="pcap_signature_samples.txt"/>
+                                <ContentControl Style="{StaticResource panel-body}">
+                                    <ContentControl.Content>
+                                        <TextBox
+                                            Height="200"
+                                            Width="350"
+                                            Background="Black"
+                                            Foreground="White"
+                                            TextWrapping="NoWrap"
+                                            AcceptsReturn="True"
+                                            HorizontalScrollBarVisibility="Auto"
+                                            VerticalScrollBarVisibility="Auto"
+                                            Text="{Binding PCAP_Sigs}" />
+                                    </ContentControl.Content>
+                                </ContentControl>
+                            </StackPanel>
+                        </ContentControl>
+                        <LineBreak/>
+                        <Run>I then brought the sample set to an</Run> <Hyperlink Command="{Binding NavigateCommand}" CommandParameter="https://www.regexpal.com/">online regex tester</Hyperlink> <Run>to create and test a regex script that would match the sample signatures.</Run>
+                        <Run>I noticed some patterns and naming conventions which can be seen in the regex generated below.</Run>
+                        <LineBreak/>
+                        <Label Style="{StaticResource kbd}">/([bushranger]{10}|[burger]{6}|[hans]{4}).(net|com|org|ru)/g</Label>
+                        <LineBreak/>                        
+                        <Run>I then used this regex and the information from wireshark to generate the snort rule.</Run><LineBreak/>
+                        <TextBlock Style="{StaticResource kbd_tb}">alert udp any any -> any any (msg:"Detected ransomware from signatures"; pcre:"/([bushranger]{10}|[burger]{6}|[hans]{4}).(net|com|org|ru)/"; sid:10000001; rev: 001;)</TextBlock><LineBreak/><LineBreak/>
+                        3) <Run>Put the snort rule into the location </Run>
+                        <Label Style="{StaticResource kbd}">/etc/snort/rules/local.rules</Label><LineBreak/><LineBreak/>
+                        4) <Run>Now run the command to test your snort rule on the pcap file in the home directory:</Run>
+                        <LineBreak/>
+                        <TextBlock Style="{StaticResource kbd_tb}">snort -A fast -r ~/snort.log.pcap -l ~/snort_logs -c /etc/snort/snort.conf</TextBlock><LineBreak/>
+                        <Run>When running the command, you will get the following results:</Run><LineBreak/>
+                        <ContentControl Style="{StaticResource panel-default}">
+                            <StackPanel>
+                                <ContentControl Style="{StaticResource panel-heading-default}" Content="SnortRunResults.txt"/>
+                                <ContentControl Style="{StaticResource panel-body}">
+                                    <ContentControl.Content>
+                                        <TextBox
+                                            Height="200"
+                                            Width="350"
+                                            Background="Black"
+                                            Foreground="White"
+                                            TextWrapping="NoWrap"
+                                            AcceptsReturn="True"
+                                            HorizontalScrollBarVisibility="Auto"
+                                            VerticalScrollBarVisibility="Auto"
+                                            Text="{Binding SnortRunResults}" />
+                                    </ContentControl.Content>
+                                </ContentControl>
+                            </StackPanel>
+                        </ContentControl>
+                        <ContentControl Style="{StaticResource panel-default}">
+                            <StackPanel>
+                                <ContentControl Style="{StaticResource panel-heading-default}" Content="SnortAlerts.txt"/>
+                                <ContentControl Style="{StaticResource panel-body}">
+                                    <ContentControl.Content>
+                                        <TextBox
+                                            Height="200"
+                                            Width="350"
+                                            Background="Black"
+                                            Foreground="White"
+                                            TextWrapping="NoWrap"
+                                            AcceptsReturn="True"
+                                            HorizontalScrollBarVisibility="Auto"
+                                            VerticalScrollBarVisibility="Auto"
+                                            Text="{Binding SnortAlerts}" />
+                                    </ContentControl.Content>
+                                </ContentControl>
+                            </StackPanel>
+                        </ContentControl>
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               TextAlignment="Left"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap">
+                        <Run>You will get the following result after getting the correct snort rule:</Run>
+                    </TextBlock>
+                    <Image Source="{Binding SnortIDS}" HorizontalAlignment="Left" Margin="10" Stretch="Fill" />
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Text="Answer/Snort Filter" />:<LineBreak/>
+                        <TextBlock Style="{StaticResource kbd_tb}">alert udp any any -> any any (msg:"Detected ransomware from signatures"; pcre:"/([bushranger]{10}|[burger]{6}|[hans]{4}).(net|com|org|ru)/"; sid:10000001; rev: 001;)</TextBlock>
+                    </TextBlock>
                 </StackPanel>
             </Expander>
             <Expander Margin="10" HorizontalAlignment="Stretch" Background="{DynamicResource IdealForegroundColorBrush}" BorderBrush="{StaticResource AccentBaseColorBrush}" BorderThickness="1"
@@ -536,8 +679,34 @@
                             </Canvas.RenderTransform>
                         </Canvas>
                     </TextBlock>
-                    <TextBlock Text="Two"/>
-                    <TextBlock Text="Three"/>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               TextAlignment="Justify"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap">
+                        <Run>Using the Word docm file, identify the domain name that the malware communicates with.</Run>
+                    </TextBlock>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               TextAlignment="Left"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap">
+                        <Run>After solving "Catch the Malware", Alabaster Snowball, will give you a word document "docm file" that has malware embedded in it.</Run><LineBreak/>
+                    </TextBlock>
+                    <Button Cursor="Hand" Command="{Binding DownloadFileCommand}" CommandParameter="{Binding ChocoZip}">Download: CHOCOLATE_CHIP_COOKIE_RECIPE.zip</Button>
+                    <Button Cursor="Hand" Command="{Binding DownloadFileCommand}" CommandParameter="{Binding ChocoDoc}">Download: CHOCOLATE_CHIP_COOKIE_RECIPE.docm</Button>
+                    <TextBlock FontFamily="Sans"
+                               FontSize="16"
+                               Margin="10"
+                               TextAlignment="Left"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap">
+                    <Run>We have to isolate and analyze the malware to identify the domain name that the malware communicates with.</Run>
+                        <LineBreak/><LineBreak/>
+                        1) <Run></Run>
+                    </TextBlock>
                     <TextBlock Text="One"/>
                     <TextBlock Text="Two"/>
                     <TextBlock Text="Three"/>

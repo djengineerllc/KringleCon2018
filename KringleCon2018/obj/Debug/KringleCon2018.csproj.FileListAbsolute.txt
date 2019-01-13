@@ -36,8 +36,6 @@ C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon20
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\Resources\Objectives\Objective8\P1_packalyzer_clientrandom_ssl.log.txt
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\Resources\Objectives\Objective8\P2_packalyzer_clientrandom_ssl.log.txt
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\KringleCon2018.exe.config
-C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\KringleCon2018.exe.manifest
-C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\KringleCon2018.application
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\KringleCon2018.exe
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\KringleCon2018.pdb
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\Caliburn.Micro.dll
@@ -101,8 +99,6 @@ C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon20
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\obj\Debug\KringleCon2018.Properties.Resources.resources
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\obj\Debug\KringleCon2018.csproj.GenerateResource.cache
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\obj\Debug\KringleCon2018.csproj.CoreCompileInputs.cache
-C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\obj\Debug\KringleCon2018.exe.manifest
-C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\obj\Debug\KringleCon2018.application
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\obj\Debug\KringleCon2018.csproj.CopyComplete
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\obj\Debug\KringleCon2018.exe
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\obj\Debug\KringleCon2018.pdb
@@ -116,3 +112,9 @@ C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon20
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\Resources\Songs\Let it Snow.mp3
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\Resources\Songs\Ode to Joy.mp3
 C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\Resources\Songs\Winter Wonderland.mp3
+C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\Resources\Objectives\Objective9\CatchTheMalware\snort.log.1547255048.4356453.pcap
+C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\Resources\Objectives\Objective9\CatchTheMalware\snort.log.1547255095.3225539.pcap
+C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\Resources\Objectives\Objective9\CatchTheMalware\snort.log.1547255127.5287354.pcap
+C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\Resources\Objectives\Objective9\CatchTheMalware\snort.log.1547255167.4590678.pcap
+C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\Resources\Objectives\Objective9\CatchTheMalware\snort.log.1547255214.5929677.pcap
+C:\Users\djeng\Documents\Visual Studio 2017\Projects\KringleCon2018\KringleCon2018\bin\Debug\Resources\Objectives\Objective9\CatchTheMalware\snort.log.1547255248.2398825.pcap
